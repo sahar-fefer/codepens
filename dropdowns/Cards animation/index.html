@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            min-height: 100%;
+            font-family: Lato;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            background: #F7F8F9;
+        }
+
+        .box {
+            width: 180px;
+            height: 128px;
+            background: #FFFFFF;
+            border: 1px solid #E7EBED;
+            border-radius: 4px;
+            transition: all .2s;
+            color: #3A4850;
+            cursor: pointer;
+            font-size: 14px;
+            line-height: 130%;
+        }
+
+        .box .light {
+            font-size: 12px;
+            color: #89959C;
+        }
+
+        .box:hover {
+            border: 1px solid #89959C;
+        }
+
+        .box.selected {
+            color: #2196F3;
+            border: 1px solid #2196F3;
+            background: #F4FAFE;
+        }
+
+        .box.selected .light {
+            color: #2196F3;
+        }
+
+    </style>
+    <button class="box" onclick="handleBoxClick()">
+        Medium <span class="light">(545)</span>
+    </button>
+    <script>
+        function handleBoxClick() {
+            var dropdown = document.getElementsByClassName("box")[0];
+            dropdown.classList.toggle("selected");
+        }
+    </script>
+</body>
+
+</html>

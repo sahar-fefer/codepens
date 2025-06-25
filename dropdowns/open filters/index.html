@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="filters-wrapper">
+        <div class="filters">
+            <button id='0' onclick="toggleFilter(event)">
+                Shape
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 1L5 5L1 1" stroke="#2D2D2D" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <button id='1' onclick="toggleFilter(event)">
+                Gender
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 1L5 5L1 1" stroke="#2D2D2D" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <button id='2' onclick="toggleFilter(event)">
+                Size
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 1L5 5L1 1" stroke="#2D2D2D" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <button id='3' onclick="toggleFilter(event)">
+                Brands
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 1L5 5L1 1" stroke="#2D2D2D" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <button id='4' onclick="toggleFilter(event)">
+                Color
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 1L5 5L1 1" stroke="#2D2D2D" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <button id='5' onclick="toggleFilter(event)">
+                Material
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 1L5 5L1 1" stroke="#2D2D2D" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <button id='6' onclick="toggleFilter(event)">
+                Price
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 1L5 5L1 1" stroke="#2D2D2D" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <button id='7' onclick="toggleFilter(event)">
+                Features
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 1L5 5L1 1" stroke="#2D2D2D" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+        <div class="all-filters">
+            <div id="0" class="filter-content first-time">
+                <img src="./Content.png">
+            </div>
+            <div id="1" class="filter-content first-time">
+                <img src="./Group 18.png">
+            </div>
+            <div id="2" class="filter-content first-time">
+                <img src="./Group 166.png">
+            </div>
+            <div id="3" class="filter-content first-time">
+                <img src="./Group 164.png">
+            </div>
+            <div id="4" class="filter-content first-time">
+                <img src="./Content.png">
+            </div>
+            <div id="5" class="filter-content first-time">
+                <img src="./Group 18.png">
+            </div>
+            <div id="6" class="filter-content first-time">
+                <img src="./Group 166.png">
+            </div>
+            <div id="7" class="filter-content first-time">
+                <img src="./Group 164.png">
+            </div>
+        </div>
+    </div>
+    <img src="./Group 10.png" class="results">
+
+
+    <script>
+        const filterContent = document.getElementsByClassName("filter-content");
+        const filtersWrapper = document.getElementById("filters-wrapper");
+        const button = document.getElementsByTagName("button");
+        let firstTime = true;
+        let close = false;
+        let prevId = undefined;
+        let curId = undefined;
+
+        function toggleFilter(e) {
+            const el = e.target.closest("button");
+
+            // check if filtersWrapper is already active
+            if (filtersWrapper.classList[0] !== "active") {
+                filtersWrapper.classList.add("active");
+            }
+
+            for (var i = 0; i < button.length; i++) {
+                // check if this is the chosen button
+                if (i.toString() === el.id) {
+                    curId = i;
+                    // check if chosen button is already active
+                    if (button[i].classList.contains("active")) {
+                        close = true;
+                        button[i].classList.remove("active");
+                        filterContent[i].classList.remove("active");
+                        filtersWrapper.classList.remove("active");
+                    } else {
+                        button[i].classList.add("active");
+                        filterContent[i].classList.add("active");
+                    }
+                } else {
+                    filterContent[i].classList.remove("active");
+                    button[i].classList.remove("active");
+                }
+            }
+            animationControl()
+            if (close) {
+                prevId = undefined;
+                close = false;
+            } else {
+                prevId = el.id;
+            }
+        }
+
+        function animationControl() {
+            // remove left and right class
+            for (let i = 0; i < filterContent.length; i++) {
+                filterContent[i].classList.remove("right");
+                filterContent[i].classList.remove("left");
+                filterContent[i].classList.remove("prev-right");
+                filterContent[i].classList.remove("prev-left");
+            }
+            // check if it is the first animation - down (not from left or right)
+            if (close || firstTime) {
+                for (let i = 0; i < filterContent.length; i++) {
+                    filterContent[i].classList.add("first-time");
+                }
+                firstTime = false;
+            } else {
+                for (let i = 0; i < filterContent.length; i++) {
+                    filterContent[i].classList.remove("first-time");
+                }
+                // check if it is left or right animation
+                console.log('prevId', prevId);
+                console.log('curId', curId);
+                if (prevId) {
+                    if (prevId < curId) {
+                        console.log('right');
+                        filterContent[curId].classList.add("right");
+                        filterContent[prevId].classList.add("prev-right");
+                    } else {
+                        console.log('left');
+                        filterContent[curId].classList.add("left");
+                        filterContent[prevId].classList.add("prev-left");
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="dropdown">
+    <button onclick="toggleButton()">
+            Sort By Price
+            <div class="wrap"><span class="arrow"><span></span><span></span></span></div>
+    </button>
+    <ul>
+        <li onclick="toggleButton()">Most Relevant</li>
+        <li onclick="toggleButton()">Most Popular</li>
+        <li onclick="toggleButton()">Name</li>
+        <li onclick="toggleButton()">Lowest Price</li>
+        <li onclick="toggleButton()">Highest Price</li>
+    </ul>
+</div>
+    <script>
+        function toggleButton() {
+            var dropdown = document.getElementsByClassName("dropdown")[0];
+            dropdown.classList.toggle("active");
+        }
+    </script>
+</body>
+
+</html>

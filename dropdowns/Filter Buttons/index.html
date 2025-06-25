@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="arrow.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <button class="dropdown" onclick="toggleButton()">
+            Brands
+            <div class="wrap"><span class="arrow"><span></span><span></span></span></div>
+    </button>
+    <script>
+
+        function toggleButton() {
+            var dropdown = document.getElementsByClassName("dropdown")[0];
+            dropdown.classList.toggle("active");
+        }
+    </script>
+</body>
+
+</html>

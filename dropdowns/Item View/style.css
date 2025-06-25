@@ -1,0 +1,50 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-family: Lato;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+svg {
+  padding-bottom: 5px;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+}
+
+svg:hover {
+  border-bottom: 1px solid #898989;
+}
+
+svg.active {
+  border-bottom: 1px solid #2D2D2D;
+}
+
+path {
+  transition: all .3s;
+}
+
+svg.active path:not(.text) {
+  stroke:#2D2D2D;
+}
+
+svg.active .text {
+  fill:#2D2D2D;
+}
