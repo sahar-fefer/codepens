@@ -1,0 +1,130 @@
+body {
+    font-family: 'Roboto';
+    margin-top: 100px;
+}
+
+nav {
+    display: flex;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: #B8C4CB;
+    justify-content: center;
+    height: fit-content;
+
+    &.next {
+
+        .current,
+        .current rect,
+        .current svg {
+            transition: all .2s .15s;
+        }
+
+        // .current svg {
+        //     animation: scale 0.4s ease-in forwards .25s;
+        // }
+    }
+
+    @keyframes scale {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.05);
+        }
+
+        90% {
+            transform: scale(0.95);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .stage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+
+
+        .num {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        &.current {
+            color: #2196F3;
+
+            rect {
+                fill: #2196F3;
+            }
+        }
+
+        &.check {
+            color: #5B6971;
+
+            rect {
+                fill: #5B6971;
+            }
+
+            .num {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .v {
+                stroke-dashoffset: 0;
+                transition: all 0.5s;
+            }
+        }
+    }
+
+    .text {
+        position: absolute;
+        bottom: -14px;
+    }
+
+    .line {
+        width: 55px;
+        height: 2px;
+        background: #F1F3F4;
+        border-radius: 100px;
+        margin-top: 15px;
+    }
+}
+
+.buttons-line {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 150px;
+
+    button {
+        background-color: white;
+        border: 2px solid #2196F3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 25px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: border .15s;
+
+        &:hover {
+            border: 2px solid #5B6971;
+        }
+
+        &:disabled,
+        &[disabled] {
+            border: 2px solid #B8C4CB;
+            color: #B8C4CB;
+            cursor: no-drop;
+        }
+    }
+}
