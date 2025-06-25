@@ -1,0 +1,101 @@
+:root {
+  --try-on-width: 158px;
+  --try-on-height: 40px;
+  --button-radius: 24px;
+  --button-color: 206deg, 90%;
+  --primary-color: hsl(var(--button-color), 54%);
+  --brighter-color: hsl(var(--button-color), 80%);
+  --darker-color: hsl(var(--button-color), 28%);
+}
+
+body {
+  margin: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+}
+body * {
+  box-sizing: border-box;
+}
+
+.try-on {
+  position: relative;
+  width: var(--try-on-width);
+}
+.try-on::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: calc(var(--try-on-height) + 2px);
+  width: calc(var(--try-on-width) + 2px);
+  -o-border-image: conic-gradient(from var(--a), #669900, #99cc33, #ccee66, #006699, #3399cc, #990066, #cc3399, #ff6600, #ff9900, #ffcc00, #669900) 1;
+     border-image: conic-gradient(from var(--a), #669900, #99cc33, #ccee66, #006699, #3399cc, #990066, #cc3399, #ff6600, #ff9900, #ffcc00, #669900) 1;
+  border-radius: var(--button-radius);
+  z-index: -1;
+  animation: a 4s linear infinite;
+  background-size: 600% 600%;
+}
+.try-on[animation=appear] {
+  animation: appear 0.3s ease-in-out, scale 0.3s ease-in-out;
+}
+.try-on[animation=appear] .icon {
+  animation: appear 0.5s ease-in-out 0.2s;
+}
+.try-on[animation=appear] .text {
+  animation: appear 0.5s ease-in-out 0.3s;
+}
+.try-on[animation=nudge] {
+  animation: nudge 0.5s ease-in-out;
+}
+
+.buttons-wrapper {
+  display: flex;
+  gap: 16px;
+}
+
+@keyframes a {
+  to {
+    --a: 1turn;
+  }
+}
+@keyframes animatedGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes scale {
+  0% {
+    scale: 0.8;
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes nudge {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=style copy.css.map */

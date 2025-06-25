@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glassesusa/dsm@latest/dist/styles.min.css">
+
+    <title>Add To Wishlist</title>
+</head>
+
+<body>
+    <button class="add-card">
+        Add Card
+    </button>
+    <div class="grid">
+        <!--   <div class="product card">
+          <img src="https://optimaxweb.glassesusa.com/image/upload/v1686479473/media/wysiwyg/codepen-media/card.jpg" alt="">
+        </div> -->
+        <div class="product card">
+            <div class="delete-wrapper" onclick="deleteButtonClick(event)">
+                <svg class="delete" width="14" height="13" viewBox="0 0 14 13" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.6673 0.5L1 12.1673" stroke="#0F0F0F" stroke-linecap="round" />
+                    <path d="M1.15305 0.5L12.8203 12.1673" stroke="#0F0F0F" stroke-linecap="round" />
+                </svg>
+            </div>
+            <img src="https://optimaxweb.glassesusa.com/image/upload/v1686479473/media/wysiwyg/codepen-media/card.jpg"
+                alt="">
+        </div>
+        <div class="product card">
+            <div class="delete-wrapper" onclick="deleteButtonClick(event)">
+                <svg class="delete" width="14" height="13" viewBox="0 0 14 13" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.6673 0.5L1 12.1673" stroke="#0F0F0F" stroke-linecap="round" />
+                    <path d="M1.15305 0.5L12.8203 12.1673" stroke="#0F0F0F" stroke-linecap="round" />
+                </svg>
+            </div>
+            <img src="https://optimaxweb.glassesusa.com/image/upload/v1686479473/media/wysiwyg/codepen-media/card.jpg"
+                alt="">
+        </div>
+        <div class="login card">
+            <svg width="182" height="65" viewBox="0 0 182 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M170.87 59.5487L171.061 60.6315L171.061 60.6315L170.87 59.5487ZM150.219 63.1898L150.028 62.1071L150.028 62.1071L150.219 63.1898ZM143.125 58.2229L144.208 58.032L144.208 58.0319L143.125 58.2229ZM135.071 12.5441L133.988 12.735L133.988 12.7351L135.071 12.5441ZM140.038 5.45026L139.847 4.36753L139.847 4.36754L140.038 5.45026ZM160.689 1.80893L160.88 2.89166L160.88 2.89165L160.689 1.80893ZM167.783 6.77614L168.865 6.58523L168.865 6.58521L167.783 6.77614ZM175.837 52.4549L176.92 52.264L176.92 52.264L175.837 52.4549ZM150.911 21.4162C151.518 21.4162 152.01 20.924 152.01 20.3168C152.01 19.7096 151.518 19.2174 150.911 19.2174V21.4162ZM147.372 23.8638L148.471 23.8638V23.8638H147.372ZM176.875 19.7122C176.268 19.7122 175.776 20.2045 175.776 20.8117C175.776 21.4189 176.268 21.9111 176.875 21.9111V19.7122ZM179.316 32.0455C179.316 32.6527 179.808 33.145 180.415 33.145C181.022 33.145 181.514 32.6527 181.514 32.0455H179.316ZM170.679 58.466L150.028 62.1071L150.41 64.2725L171.061 60.6315L170.679 58.466ZM150.028 62.1071C147.295 62.589 144.69 60.7644 144.208 58.032L142.042 58.4137C142.735 62.3423 146.481 64.9654 150.41 64.2725L150.028 62.1071ZM144.208 58.0319L136.153 12.3532L133.988 12.7351L142.043 58.4138L144.208 58.0319ZM136.153 12.3533C135.672 9.62048 137.496 7.01491 140.229 6.53298L139.847 4.36754C135.918 5.06037 133.295 8.8063 133.988 12.735L136.153 12.3533ZM140.229 6.53299L160.88 2.89166L160.498 0.726202L139.847 4.36753L140.229 6.53299ZM160.88 2.89165C163.612 2.40975 166.218 4.23425 166.7 6.96708L168.865 6.58521C168.172 2.65652 164.426 0.0333633 160.498 0.726208L160.88 2.89165ZM174.754 52.6457C175.236 55.3783 173.411 57.9841 170.679 58.466L171.061 60.6315C174.989 59.9386 177.612 56.1924 176.92 52.264L174.754 52.6457ZM172.466 39.6703L174.754 52.6458L176.92 52.264L174.632 39.2885L172.466 39.6703ZM166.7 6.96706L170.028 25.8401L172.193 25.4582L168.865 6.58523L166.7 6.96706ZM165.153 32.3994C165.153 36.925 168.812 40.593 173.332 40.593V38.3941C170.03 38.3941 167.352 35.7145 167.352 32.3994H165.153ZM173.332 40.593C177.851 40.593 181.512 36.9252 181.512 32.3994H179.313C179.313 35.7143 176.633 38.3941 173.332 38.3941V40.593ZM181.512 32.3994C181.512 27.8755 177.851 24.2058 173.332 24.2058V26.4047C176.633 26.4047 179.313 29.0859 179.313 32.3994H181.512ZM173.332 24.2058C168.812 24.2058 165.153 27.8756 165.153 32.3994H167.352C167.352 29.0858 170.031 26.4047 173.332 26.4047V24.2058ZM135.64 15.7734L168.351 10.0054L167.969 7.83991L135.258 13.6079L135.64 15.7734ZM142.937 57.1574L175.648 51.3894L175.266 49.2239L142.555 54.9919L142.937 57.1574ZM162.526 32.2488C162.947 31.8132 163.534 31.545 164.186 31.545V29.3461C162.914 29.3461 161.765 29.874 160.946 30.7189L162.526 32.2488ZM164.186 31.545C164.833 31.545 165.42 31.8126 165.843 32.249L167.421 30.7186C166.603 29.8746 165.455 29.3461 164.186 29.3461V31.545ZM160.431 33.1125C160.431 36.4275 157.751 39.1072 154.45 39.1072V41.3061C158.969 41.3061 162.629 37.6382 162.629 33.1125H160.431ZM154.45 39.1072C151.148 39.1072 148.471 36.4279 148.471 33.1125H146.272C146.272 37.6378 149.93 41.3061 154.45 41.3061V39.1072ZM148.471 33.1125C148.471 29.7986 151.149 27.1178 154.45 27.1178V24.9189C149.929 24.9189 146.272 28.589 146.272 33.1125H148.471ZM154.45 27.1178C157.751 27.1178 160.431 29.799 160.431 33.1125H162.629C162.629 28.5886 158.969 24.9189 154.45 24.9189V27.1178ZM165.16 32.3993C165.16 36.9249 168.819 40.5929 173.339 40.5929V38.394C170.038 38.394 167.359 35.7144 167.359 32.3993H165.16ZM173.339 40.5929C177.858 40.5929 181.519 36.925 181.519 32.3993H179.32C179.32 35.7142 176.64 38.394 173.339 38.394V40.5929ZM181.519 32.3993C181.519 27.8754 177.858 24.2057 173.339 24.2057V26.4046C176.64 26.4046 179.32 29.0858 179.32 32.3993H181.519ZM173.339 24.2057C168.819 24.2057 165.16 27.8755 165.16 32.3993H167.359C167.359 29.0857 170.038 26.4046 173.339 26.4046V24.2057ZM150.911 19.2174C148.346 19.2174 146.272 21.2994 146.272 23.8638H148.471C148.471 22.5091 149.565 21.4162 150.911 21.4162V19.2174ZM146.272 23.8637L146.272 33.1125L148.471 33.1125L148.471 23.8638L146.272 23.8637ZM176.875 21.9111C178.222 21.9111 179.316 23.0041 179.316 24.3586H181.514C181.514 21.7942 179.441 19.7122 176.875 19.7122V21.9111ZM179.316 24.3586V32.0455H181.514V24.3586H179.316Z"
+                    fill="#4D4D4D" />
+                <path
+                    d="M27.9655 60.1832C27.3583 60.1832 26.866 60.6755 26.866 61.2827C26.866 61.8899 27.3583 62.3821 27.9655 62.3821V60.1832ZM57.2836 62.3821C57.8908 62.3821 58.3831 61.8899 58.3831 61.2827C58.3831 60.6755 57.8908 60.1832 57.2836 60.1832V62.3821ZM40.7922 55.419C40.7922 54.8118 40.2999 54.3196 39.6927 54.3196C39.0855 54.3196 38.5933 54.8118 38.5933 55.419H40.7922ZM38.5933 61.2827C38.5933 61.8899 39.0855 62.3821 39.6927 62.3821C40.2999 62.3821 40.7922 61.8899 40.7922 61.2827H38.5933ZM46.6558 55.419C46.6558 54.8118 46.1636 54.3196 45.5564 54.3196C44.9492 54.3196 44.4569 54.8118 44.4569 55.419H46.6558ZM44.4569 61.2827C44.4569 61.8899 44.9492 62.3821 45.5564 62.3821C46.1636 62.3821 46.6558 61.8899 46.6558 61.2827H44.4569ZM1.5791 44.7912H83.67V42.5923H1.5791V44.7912ZM43.724 49.5556C43.724 50.1628 43.2318 50.6548 42.6248 50.6548V52.8537C44.4459 52.8537 45.9229 51.3775 45.9229 49.5556H43.724ZM42.6248 50.6548C42.0172 50.6548 41.5251 50.1627 41.5251 49.5556H39.3263C39.3263 51.3776 40.8034 52.8537 42.6248 52.8537V50.6548ZM41.5251 49.5556C41.5251 48.9483 42.0175 48.456 42.6248 48.456V46.2571C40.8031 46.2571 39.3263 47.7339 39.3263 49.5556H41.5251ZM42.6248 48.456C43.2315 48.456 43.724 48.9482 43.724 49.5556H45.9229C45.9229 47.734 44.4462 46.2571 42.6248 46.2571V48.456ZM4.51092 6.67756H80.7382V4.47869H4.51092V6.67756ZM82.5706 8.50994V52.4872H84.7694V8.50994H82.5706ZM80.7382 54.3196H4.51092V56.5185H80.7382V54.3196ZM2.67853 52.4872V8.50994H0.47967V52.4872H2.67853ZM4.51092 54.3196C3.49892 54.3196 2.67853 53.4992 2.67853 52.4872H0.47967C0.47967 54.7136 2.28452 56.5185 4.51092 56.5185V54.3196ZM82.5706 52.4872C82.5706 53.4992 81.7502 54.3196 80.7382 54.3196V56.5185C82.9646 56.5185 84.7694 54.7136 84.7694 52.4872H82.5706ZM80.7382 6.67756C81.7502 6.67756 82.5706 7.49794 82.5706 8.50994H84.7694C84.7694 6.28355 82.9646 4.47869 80.7382 4.47869V6.67756ZM4.51092 4.47869C2.28452 4.47869 0.47967 6.28355 0.47967 8.50994H2.67853C2.67853 7.49794 3.49892 6.67756 4.51092 6.67756V4.47869ZM27.9655 62.3821H57.2836V60.1832H27.9655V62.3821ZM38.5933 55.419V61.2827H40.7922V55.419H38.5933ZM44.4569 55.419V61.2827H46.6558V55.419H44.4569Z"
+                    fill="#4D4D4D" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M42.8903 34.8956C44.5367 33.8815 52.6756 29.1152 52.4129 22.6048C52.1494 16.0953 44.0942 15.6018 42.8903 21.0146C41.6873 15.6018 33.6312 16.0953 33.3686 22.6048C33.1051 29.1152 41.244 33.8815 42.8903 34.8956Z"
+                    fill="#F22A42" />
+                <path
+                    d="M101.261 34.7006C100.856 34.7006 100.528 35.0288 100.528 35.4336C100.528 35.8384 100.856 36.1665 101.261 36.1665V34.7006ZM120.836 35.9519C121.122 35.6656 121.122 35.2016 120.836 34.9153L116.171 30.2508C115.885 29.9646 115.421 29.9646 115.135 30.2508C114.849 30.5371 114.849 31.0011 115.135 31.2874L119.281 35.4336L115.135 39.5798C114.849 39.866 114.849 40.3301 115.135 40.6164C115.421 40.9026 115.885 40.9026 116.171 40.6164L120.836 35.9519ZM101.261 36.1665L120.318 36.1665V34.7006L101.261 34.7006V36.1665Z"
+                    fill="#4D4D4D" />
+            </svg>
+            <div class="text">
+                Log in to sync your favorites<br>across all your devices.
+            </div>
+            <svg width="190" height="49" viewBox="0 0 190 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect y="0.75" width="190" height="48" rx="24" fill="#2196F3" />
+                <path
+                    d="M73.7568 29.1318H79.3555V31.25H71.1201V18.4531H73.7568V29.1318ZM80.3135 26.4072C80.3135 25.4639 80.4951 24.623 80.8584 23.8848C81.2217 23.1465 81.7432 22.5752 82.4229 22.1709C83.1084 21.7666 83.9023 21.5645 84.8047 21.5645C86.0879 21.5645 87.1338 21.957 87.9424 22.7422C88.7568 23.5273 89.2109 24.5938 89.3047 25.9414L89.3223 26.5918C89.3223 28.0508 88.915 29.2227 88.1006 30.1074C87.2861 30.9863 86.1934 31.4258 84.8223 31.4258C83.4512 31.4258 82.3555 30.9863 81.5352 30.1074C80.7207 29.2285 80.3135 28.0332 80.3135 26.5215V26.4072ZM82.8535 26.5918C82.8535 27.4941 83.0234 28.1855 83.3633 28.666C83.7031 29.1406 84.1895 29.3779 84.8223 29.3779C85.4375 29.3779 85.918 29.1436 86.2637 28.6748C86.6094 28.2002 86.7822 27.4443 86.7822 26.4072C86.7822 25.5225 86.6094 24.8369 86.2637 24.3506C85.918 23.8643 85.4316 23.6211 84.8047 23.6211C84.1836 23.6211 83.7031 23.8643 83.3633 24.3506C83.0234 24.8311 82.8535 25.5781 82.8535 26.5918ZM90.5176 26.4248C90.5176 24.9658 90.8633 23.791 91.5547 22.9004C92.252 22.0098 93.1895 21.5645 94.3672 21.5645C95.4102 21.5645 96.2217 21.9219 96.8018 22.6367L96.9072 21.7402H99.21V30.9336C99.21 31.7656 99.0195 32.4893 98.6387 33.1045C98.2637 33.7197 97.7334 34.1885 97.0479 34.5107C96.3623 34.833 95.5596 34.9941 94.6396 34.9941C93.9424 34.9941 93.2627 34.8535 92.6006 34.5723C91.9385 34.2969 91.4375 33.9395 91.0977 33.5L92.2227 31.9531C92.8555 32.6621 93.623 33.0166 94.5254 33.0166C95.1992 33.0166 95.7236 32.835 96.0986 32.4717C96.4736 32.1143 96.6611 31.6045 96.6611 30.9424V30.4326C96.0752 31.0947 95.3047 31.4258 94.3496 31.4258C93.207 31.4258 92.2812 30.9805 91.5723 30.0898C90.8691 29.1934 90.5176 28.0068 90.5176 26.5303V26.4248ZM93.0576 26.6094C93.0576 27.4707 93.2305 28.1475 93.5762 28.6396C93.9219 29.126 94.3965 29.3691 95 29.3691C95.7734 29.3691 96.3271 29.0791 96.6611 28.499V24.5C96.3213 23.9199 95.7734 23.6299 95.0176 23.6299C94.4082 23.6299 93.9277 23.8789 93.5762 24.377C93.2305 24.875 93.0576 25.6191 93.0576 26.6094ZM108.623 31.25H105.986V18.4531H108.623V31.25ZM113.246 21.7402L113.325 22.8389C114.005 21.9893 114.916 21.5645 116.059 21.5645C117.066 21.5645 117.816 21.8604 118.309 22.4521C118.801 23.0439 119.053 23.9287 119.064 25.1064V31.25H116.524V25.168C116.524 24.6289 116.407 24.2393 116.173 23.999C115.938 23.7529 115.549 23.6299 115.004 23.6299C114.289 23.6299 113.753 23.9346 113.396 24.5439V31.25H110.855V21.7402H113.246Z"
+                    fill="white" />
+            </svg>
+        </div>
+    </div>
+    <!-- <script src="./index.js"></script> -->
+    <script>
+        const addCard = document.querySelector(".add-card");
+        const grid = document.querySelector(".grid");
+        let products = grid.querySelectorAll(".product");
+        const loginCard = grid.querySelector(".login");
+
+        addCard.addEventListener("click", () => {
+            // check if login card move down line and if so - add animation
+            const isCardMovedDownLine = moveCardDownLine();
+
+            // build new card
+            const lastElemId = parseInt(products[products.length - 1].dataset.id);
+
+            const card = document.createElement("div");
+            card.classList = "product card";
+
+            // check if card move down and if so add transition delay
+            if (isCardMovedDownLine) {
+                card.style.transitionDelay = ".15s";
+            }
+
+            const img = document.createElement("img");
+            img.src =
+                "https://optimaxweb.glassesusa.com/image/upload/v1686479473/media/wysiwyg/codepen-media/card.jpg";
+            card.appendChild(img);
+
+            // add attribute "open" to able the animation
+            card.setAttribute("open", "");
+            ///////////
+
+            // insert card to the grid
+            //  if there is "login card", insert it before the last card
+            if (loginCard) {
+                grid.insertBefore(card, loginCard);
+            } else {
+                grid.appendChild(card);
+            }
+
+            // remove the "open" attribute to start the animation
+            setTimeout(() => {
+                card.removeAttribute("open");
+            }, 10);
+
+            // remove the transitionDelay from card
+            setTimeout(() => {
+                card.style.transitionDelay = "0s";
+            }, 150);
+
+            // add the new card and delete button to lists
+            deleteCardButtons = grid.querySelectorAll(".delete-wrapper");
+            products = grid.querySelectorAll(".product");
+        });
+
+        // on add card - check if login card move down line and if so add animation.
+        function moveCardDownLine() {
+            const loginIndex = getCardId(loginCard);
+            loginCard.style.animation = "";
+            void loginCard.offsetWidth;
+            if ((loginIndex + 1) % 3 === 0) {
+                loginCard.style.animation = "moveLine ease .8s";
+                return true;
+            } else {
+                loginCard.style.animation = "bounce ease .3s .2s";
+                return false;
+            }
+        }
+
+        function getCardId(card) {
+            const cards = Array.prototype.slice.call(document.querySelectorAll(".card"));
+            return cards.indexOf(card);
+        }
+
+        const undoWrapper = document.querySelector(".undo-wrapper");
+        const undo = undoWrapper.querySelector(".undo");
+        const closeUndoPopup = undoWrapper.querySelector(".close");
+
+        let deletedElements = [];
+        let lastElemId;
+
+        // general function to clean grid from deleting attributes
+        function clearGrid(card) {
+            if (!card) {
+                card = deletedElements[deletedElements.length - 1].curCard;
+            }
+            undoWrapper.removeAttribute("visible");
+            card.removeAttribute("close");
+            deletedElements.pop();
+        }
+
+        // add event listener to close undo button
+        closeUndoPopup.addEventListener("click", () => {
+            undoWrapper.removeAttribute("visible");
+        });
+
+        // add event listener to undo click
+        undo.addEventListener("click", () => {
+            const placeholder = document.querySelector(".placeholder");
+            if (placeholder) {
+                placeholder.remove();
+            }
+            const moveLine = document.querySelector("[move-line]");
+            console.log("moveLine", moveLine);
+            if (moveLine) {
+                moveLine.removeAttribute("move-line");
+            }
+            card = deletedElements[deletedElements.length - 1];
+            const curCard = card.curCard;
+            const id = card.id;
+            const nextCard = grid.children[id + 1];
+            console.log("nextCard", nextCard);
+            nextCard.style.animation = "bounce ease .3s .2s";
+            clearTimeout(deleteCardTimeout);
+            clearGrid(curCard);
+            setTimeout(() => {
+                nextCard.style.animation = "";
+            }, 600);
+        });
+
+        // delete card at the end of timeout
+        function deleteCard(card) {
+            console.log("deleteCard");
+            clearGrid(card);
+            card.remove();
+        }
+
+        // on delete - check if some card move up line and if so add animation.
+        function moveCardUpLine(deletedCardId) {
+            const cards = grid.querySelectorAll(".card");
+            const cardsLength = cards.length;
+            if (cardsLength > 3) {
+                for (let i = 3; i < cards.length; i = i + 3) {
+                    if (deletedCardId < i) {
+                        // adding placeholder to handle with the jumping card.
+                        const placeholder = document.createElement("div");
+                        placeholder.classList = "placeholder";
+                        grid.insertBefore(placeholder, cards[i]);
+
+                        const animCard = cards[i];
+                        animCard.removeAttribute("move-line");
+                        void animCard.offsetWidth;
+                        animCard.setAttribute("move-line", "");
+                        console.log("animCard", animCard);
+
+                        setTimeout(() => {
+                            placeholder.remove();
+                        }, 3300);
+                    }
+                }
+            }
+        }
+
+        function getCardId(card) {
+            const cards = Array.prototype.slice.call(document.querySelectorAll(".card"));
+            return cards.indexOf(card);
+        }
+
+        // declare deleteCardTimeout
+        let deleteCardTimeout;
+
+        function deleteButtonClick(e) {
+            deletedElements = [];
+            const curCard = e.target.closest(".card");
+            const curId = getCardId(curCard);
+            curCard.setAttribute("close", "");
+            undoWrapper.setAttribute("visible", "");
+            deletedElements.push({
+                curCard,
+                id: curId
+            });
+
+            // console.log('curId', curId);
+            moveCardUpLine(curId);
+
+            deleteCardTimeout = setTimeout(() => deleteCard(curCard), 8000);
+        }
+    </script>
+</body>
+
+</html>

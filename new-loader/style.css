@@ -1,0 +1,175 @@
+body {
+  margin: 20vh auto 0;
+  font-family: 'Roboto';
+}
+
+.loaders-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 45px;
+}
+
+.xs {
+  width: 120px;
+  height: 32px;
+}
+
+.xs .loader {
+  width: 18px;
+}
+
+.xs circle {
+  stroke-width: 2px;
+}
+
+.xs .circular {
+  height: 18px;
+  width: 18px;
+}
+
+.s {
+  width: 133px;
+  height: 40px;
+}
+
+.s .loader {
+  width: 22px;
+}
+
+.s .circular {
+  height: 22px;
+  width: 22px;
+}
+
+.m {
+  width: 141px;
+  height: 48px;
+}
+
+.m .loader {
+  width: 26px;
+}
+
+.m .circular {
+  height: 26px;
+  width: 26px;
+}
+
+.l {
+  width: 176px;
+  height: 60px;
+}
+
+.l .loader {
+  width: 32px;
+}
+
+.l .circular {
+  height: 32px;
+  width: 32px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #5B6971;
+  margin-bottom: 8px;
+}
+
+.button {
+  background: #CC5600;
+  border: 2px solid #CC5600;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loader {
+  position: relative;
+  margin: 0px auto;
+}
+
+.loader:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.circular {
+  -webkit-animation: rotate 2s linear infinite forwards;
+          animation: rotate 2s linear infinite forwards;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  overflow: visible;
+}
+
+.circular circle {
+  stroke-width: 3px;
+  stroke: #FFFFFF;
+  fill: none;
+}
+
+.loader-circle {
+  stroke-dasharray: 184%, 400%;
+  stroke-dashoffset: -313%;
+  -webkit-animation: dash 1.5s ease-in-out infinite forwards;
+          animation: dash 1.5s ease-in-out infinite forwards;
+  stroke-linecap: round;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dasharray: 0%, 400%;
+    stroke-dashoffset: 0%;
+  }
+  50% {
+    stroke-dasharray: 184%, 400%;
+    stroke-dashoffset: -109%;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 0%, 400%;
+    stroke-dashoffset: 0%;
+  }
+  50% {
+    stroke-dasharray: 184%, 400%;
+    stroke-dashoffset: -109%;
+  }
+}

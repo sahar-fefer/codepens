@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CTA Wish List</title>
+</head>
+
+<body>
+    <p>Select color</p>
+    <label for="orange">Orange:</label>
+    <input type="radio" name="color" id="orange" checked><br>
+    <label for="orange">Blue:</label>
+    <input type="radio" name="color" id="blue">
+
+    <p>Select Fill</p>
+    <label for="filled">Filled:</label>
+    <input type="radio" name="fill" id="filled" checked><br>
+    <label for="ghost">Ghost:</label>
+    <input type="radio" name="fill" id="ghost">
+
+    <p>How many buttons:</p>
+    <label for="two">2 buttons:</label>
+    <input type="radio" name="num-buttons" id="two" checked><br>
+    <label for="three">3 buttons:</label>
+    <input type="radio" name="num-buttons" id="three">
+
+    <div class="btns-wrapper">
+        <div class="cta cta-1 filled">Choose lenses</div>
+        <div class="bottom-ctas">
+            <div class="cta cta-2">Add to Cart</div>
+            <div class="cta heart-cta" onclick="addWishList()">
+                <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M12.4995 21C14.4865 19.847 24.3095 14.428 23.9925 7.02595C23.6745 -0.37505 13.9525 -0.936049 12.4995 5.21795C11.0475 -0.936049 1.32455 -0.37505 1.00755 7.02595C0.68955 14.428 10.5125 19.847 12.4995 21Z"
+                        stroke="#FF6C00" stroke-width="2" stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function addWishList() {
+            const heart = document.querySelector(".heart-cta");
+            heart.classList.toggle("selected");
+        }
+
+        const btnsWrapper = document.querySelector('.btns-wrapper');
+        const txtCTA = document.querySelector('.cta-1');
+
+        const colorsRadios = document.querySelectorAll('input[type=radio][name="color"]');
+        const fillRadios = document.querySelectorAll('input[type=radio][name="fill"]');
+        const numRadios = document.querySelectorAll('input[type=radio][name="num-buttons"]');
+
+        function colorHandler(event) {
+            if (this.id === 'orange') {
+                console.log('orange');
+                document.documentElement.style.setProperty('--main-color', '#FF6C00');
+                document.documentElement.style.setProperty('--hover-color', '#E36000');
+            } else {
+            document.documentElement.style.setProperty('--main-color', '#2196F3');
+            document.documentElement.style.setProperty('--hover-color', '#117DD2');
+        }
+    }
+
+        function fillHandler(event) {
+            if (this.id === 'filled') {
+                txtCTA.classList.add('filled')
+            } else txtCTA.classList.remove('filled')
+        }
+
+        function numHandler(event) {
+            if (this.id === 'three') {
+                btnsWrapper.classList.add('three')
+                txtCTA.classList.add('filled')
+            } else btnsWrapper.classList.remove('three')
+        }
+
+        Array.prototype.forEach.call(colorsRadios, function (radio) {
+            radio.addEventListener('change', colorHandler);
+        });
+
+        Array.prototype.forEach.call(fillRadios, function (radio) {
+            radio.addEventListener('change', fillHandler);
+        });
+
+        Array.prototype.forEach.call(numRadios, function (radio) {
+            radio.addEventListener('change', numHandler);
+        });
+    </script>
+</body>
+
+</html>

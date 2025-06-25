@@ -1,0 +1,132 @@
+:root {
+    --main-color: #FF6C00;
+    --hover-color: #E36000;
+}
+
+.all-typs-buttons {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22px;
+    display: flex;
+    gap: 100px;
+    }
+
+.btns-wrapper {
+    width: 348px;
+    display: flex;
+}
+
+.ghost {
+    color: var(--main-color);
+}
+
+.bottom-ctas {
+    display: flex;
+}
+
+/* CTA */
+.cta {
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--main-color);
+    cursor: pointer;
+    height: 64px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all .2s;
+}
+
+.cta-1:hover, .cta-2:hover {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+    color: white;
+}
+
+.cta-1 {
+    color: var(--main-color);
+}
+
+.filled {
+    color: white;
+    background: var(--main-color);
+}
+
+.cta-2 {
+    height: 64px;
+    color: var(--main-color);
+    display: none;
+}
+
+/* Middle Space */
+.top-space {
+    margin-top: 50px;
+}
+
+/* Last Child */
+.three {
+    display: block;
+    margin: auto;
+}
+
+.three .bottom-ctas {
+    display: flex;
+    margin-top: 12px;
+}
+
+.three .cta-2 {
+    display: flex;
+}
+
+/* Heart CTA */
+.heart-cta {
+    min-width: 64px;
+    max-width: 64px;
+    margin-left: 6px;
+    transition: all .2s;
+    padding-top: 2px;
+}
+
+.heart-cta svg * {
+    stroke: var(--main-color);
+}
+
+.heart-cta:hover {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+}
+
+.heart-cta:hover svg * {
+    stroke: white;
+}
+
+.heart-cta.selected svg * {
+    stroke: var(--main-color);
+    fill: var(--main-color);
+}
+
+.heart-cta.selected:hover svg * {
+    background-color: var(--hover-color);
+    stroke: white;
+    fill: white;
+}
+
+.heart-cta.selected svg {
+    transition: all 0s;
+    animation-name: iconAni;
+    animation-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+  }
+
+  @keyframes iconAni {
+    0%   {transform: scale(1);}
+    50%  {transform: scale(1.15);}
+    100% {transform: scale(1);}
+  }

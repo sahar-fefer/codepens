@@ -1,0 +1,70 @@
+.line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.line .svg-wrapper {
+  border-radius: 50%;
+  border: 1px solid var(--Greys-Warm-Seashell, #f1f1f1);
+  background: var(--Greys-Warm-Alabaster, #f8f8f8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  margin-right: 14px;
+  position: relative;
+}
+.line .svg-wrapper[active] .package {
+  opacity: 1;
+  scale: 1;
+}
+.line .svg-wrapper[active] .shield {
+  scale: 1;
+  top: 49%;
+  left: 56.2%;
+}
+.line .svg-wrapper[active] .shield path {
+  stroke-width: 1.4;
+  transition-delay: 0.1s;
+}
+.line .svg-wrapper .shield,
+.line .svg-wrapper .package {
+  position: absolute;
+  transition: all 0.3s ease;
+}
+.line .svg-wrapper .shield {
+  scale: 2;
+  background: var(--Greys-Warm-Alabaster, #f8f8f8);
+  top: 31%;
+  left: 34%;
+}
+.line .svg-wrapper .shield path {
+  stroke-width: 0.8;
+  transition: all 0.3s ease;
+}
+.line .svg-wrapper .package {
+  opacity: 0;
+  scale: 0.5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.line .text {
+  font-family: Roboto;
+  margin-right: 30px;
+}
+.line .text .title {
+  color: var(--Greys-Warm-Cod-Gray, #0f0f0f);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  margin-bottom: 4px;
+}
+.line .text .sub-title {
+  color: var(--Greys-Warm-Gray, var(--Greys-Warm-Gray, #898989));
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+}/*# sourceMappingURL=style.css.map */

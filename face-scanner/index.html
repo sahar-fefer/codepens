@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Face Scanner</title>
+</head>
+
+<body>
+    <div class="face-scanner">
+        <div class="background"></div>
+        <svg class="face-ellipse" width="1024" height="1274" viewBox="0 0 1024 1366" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <ellipse class="ellipse-border" cx="512.5" cy="595" rx="340.5" ry="448" stroke="white" stroke-width="3"
+                stroke-linecap="round" />
+            <ellipse class="load" cx="512.5" cy="595" rx="340.5" ry="448" stroke="#2196F3" stroke-width="3"
+                stroke-linecap="round" />
+        </svg>
+        <div class="scan-wave"></div>
+    </div>
+    <script>
+        const scanner = document.querySelector('.face-scanner');
+
+        const loadDelay = 4000;
+        const loadingTime = 1600;
+
+        function activateAnimation() {
+            scanner.classList.remove('done')
+            scanner.classList.add('active')
+
+            setTimeout(() => {
+                scanner.classList.add('done')
+            }, loadDelay);
+
+            setTimeout(() => {
+                scanner.classList.remove('active')
+            }, loadDelay + loadingTime);
+        }
+
+        window.addEventListener('load', () => {
+            activateAnimation()
+            console.log('active');
+        })
+    </script>
+</body>
+
+</html>

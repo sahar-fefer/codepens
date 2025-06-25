@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex">
+
+    <title>Sticky Scroll</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glassesusa/dsm@latest/dist/styles.min.css">
+    <link rel="stylesheet" href="style.css">
+    <img class="navbar"
+        src="https://optimaxweb.glassesusa.com/image/upload/v1695911747/media/wysiwyg/codepen-media/sticky-sidebar/Group_5218.jpg"
+        alt="">
+    <section class="main-content">
+        <div class="content">
+            <img src="https://optimaxweb.glassesusa.com/image/upload/v1695911562/media/wysiwyg/codepen-media/sticky-sidebar/Group_5217.jpg"
+                alt="">
+            <img src="https://optimaxweb.glassesusa.com/image/upload/v1695911563/media/wysiwyg/codepen-media/sticky-sidebar/Frame_5229.jpg"
+                alt="">
+            <img src="https://optimaxweb.glassesusa.com/image/upload/v1695911563/media/wysiwyg/codepen-media/sticky-sidebar/Frame_5229.jpg"
+                alt="">
+            <img src="https://optimaxweb.glassesusa.com/image/upload/v1695911563/media/wysiwyg/codepen-media/sticky-sidebar/Frame_5229.jpg"
+                alt="">
+        </div>
+        <div class="sidebar" style="top: 0px">
+            <img class="sidebar-content"
+                src="https://optimaxweb.glassesusa.com/image/upload/v1696235900/media/wysiwyg/codepen-media/sticky-sidebar/11Frame_5228.jpg"
+                alt="">
+        </div>
+    </section>
+    <section class="strip"></section>
+    <section class="strip"></section>
+    <script>
+        //Sticky element selector..
+        const stickyElement = document.querySelector('.sidebar'),
+
+            //..and other constant
+            startPosition = stickyElement.getBoundingClientRect().top,
+            sideBarGap = '0px';
+
+        //Variables
+        let endScroll = window.innerHeight - stickyElement.offsetHeight - 500,
+            curPos = window.scrollY,
+            screenHeight = window.innerHeight,
+            stickyElementHeight = stickyElement.offsetHeight;
+
+        //Main function
+        function positionStickySidebar() {
+            endScroll = window.innerHeight - stickyElement.offsetHeight;
+            let stickyElementTop = parseInt(stickyElement.style.top.replace('px;', ''));
+            if (stickyElementHeight > screenHeight) {
+                if (window.scrollY < curPos) {
+
+                    //Scroll up
+                    if (stickyElementTop < 0) {
+                        stickyElement.style.top = (stickyElementTop + curPos - window.scrollY) + 'px';
+                    } else if (stickyElementTop >= 0 && stickyElementTop != 0) {
+                        stickyElement.style.top = sideBarGap;
+                    }
+                } else {
+
+                    //Scroll down
+                    if (stickyElementTop > endScroll) {
+                        stickyElement.style.top = (stickyElementTop + curPos - window.scrollY) + 'px';
+                    } else if (stickyElementTop < (endScroll) && stickyElementTop != endScroll) {
+                        stickyElement.style.top = endScroll + 'px';
+                    }
+                }
+            } else {
+                stickyElement.style.top = sideBarGap;
+            }
+            curPos = window.scrollY;
+        }
+
+        function updateSticky() {
+            screenHeight = window.innerHeight;
+            stickyElementHeight = stickyElement.offsetHeight;
+            positionStickySidebar();
+        }
+
+        // setTimeout(() => {
+        //Check heights of the viewport and the sticky element on window resize and reapply positioning
+        console.log('loaded');
+        window.addEventListener('resize', () => {
+            curPos = window.scrollY;
+            updateSticky();
+        });
+        //Follow the main function when scrolling
+        document.addEventListener('scroll', updateSticky, {
+            capture: true,
+            passive: true
+        });
+        // }, 1000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+.grid {
+    width: 50vw;
+}
+
+.wrapper {
+    display: grid;
+}
+
+.wrapper:first-child {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.wrapper:last-child {
+    margin-top: 16px;
+    grid-template-columns: repeat(3, 1fr) 17px repeat(2, 1fr);
+}
+
+.space {
+    margin-left: 17px;
+}
+
+.cell {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #3A4850;
+    border: 1px solid #DEDEDE;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    padding-left: 18px;
+    gap: 6px;
+}
+
+.inner {
+    font-weight: 400;
+
+}
+
+.header {
+    font-weight: 700;
+    background: #F4FAFE;
+}
+
+.small {
+    font-size: 12px;
+}

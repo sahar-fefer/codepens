@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex">
+
+    <title>Sticky sidebar</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glassesusa/dsm@latest/dist/styles.min.css">
+    <link rel="stylesheet" href="style.css">
+    <img class="navbar"
+        src="https://optimaxweb.glassesusa.com/image/upload/v1695911747/media/wysiwyg/codepen-media/sticky-sidebar/Group_5218.jpg"
+        alt="">
+    <section class="main-content">
+        <div class="content">
+            <img src="https://optimaxweb.glassesusa.com/image/upload/v1695911562/media/wysiwyg/codepen-media/sticky-sidebar/Group_5217.jpg"
+                alt="">
+            <img src="https://optimaxweb.glassesusa.com/image/upload/v1695911563/media/wysiwyg/codepen-media/sticky-sidebar/Frame_5229.jpg"
+                alt="">
+            <img src="https://optimaxweb.glassesusa.com/image/upload/v1695911563/media/wysiwyg/codepen-media/sticky-sidebar/Frame_5229.jpg"
+                alt="">
+            <img src="https://optimaxweb.glassesusa.com/image/upload/v1695911563/media/wysiwyg/codepen-media/sticky-sidebar/Frame_5229.jpg"
+                alt="">
+        </div>
+        <div class="sidebar">
+            <div class="top-spacing"></div>
+            <div class="marker" top></div>
+            <img class="sidebar-content"
+                src="https://optimaxweb.glassesusa.com/image/upload/v1696235900/media/wysiwyg/codepen-media/sticky-sidebar/11Frame_5228.jpg"
+                alt="">
+            <div class="marker" bottom></div>
+        </div>
+    </section>
+    <section class="strip"></section>
+    <section class="strip"></section>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const mainContent = document.querySelector('.main-content');
+            const mainContentHeight = mainContent.offsetHeight;
+            const topSpacing = document.querySelector('.top-spacing');
+            const sideBar = document.querySelector('.sidebar-content');
+            const sideBarHeight = sideBar.offsetHeight;
+            const navBarHeight = document.querySelector('.navbar').offsetHeight;
+            const windowHeigh = window.innerHeight;
+            // const fixedSpaces = -(mainContentHeight - sideBarHeight) / 2;
+            const fixedSpaces = (windowHeigh - sideBarHeight) / 2;
+
+            let lastScrollPosition = window.pageYOffset; // Initialize the last scroll position
+            let insideSideNav = false;
+            let topSpace = window.pageYOffset;
+
+            // Add a scroll event listener to the window
+            document.addEventListener('scroll', () => {
+                const currentScrollPosition = window.pageYOffset;
+                topSpace = window.pageYOffset - navBarHeight;
+
+                checkDir(currentScrollPosition)
+                setTopSpacing(topSpace, currentScrollPosition);
+                ifStopScrolling();
+            });
+
+            function ifStopScrolling() {
+                if (topSpace > 0 && topSpace + windowHeigh < mainContentHeight) {
+                    // console.log('inside!');
+                }
+            }
+
+            function setTopSpacing(topSpace, currentScrollPosition) {
+                // if (topSpace <= fixedSpaces) {
+                // if (topSpace <= mainContentHeight && topSpace >= 0)
+
+                // if (topSpace <= (mainContentHeight / 2) && topSpace >= 0)
+                if (topSpace <= (mainContentHeight / 2) - (navBarHeight / 2) && topSpace >= 0)
+                    topSpacing.style.marginTop = topSpace + 'px';
+                else if (topSpace < 0)
+                    topSpacing.style.marginTop = '0px';
+            }
+
+            function checkDir(currentScrollPosition) {
+                if (currentScrollPosition > lastScrollPosition) {
+                    // Scrolling down
+                    sideBar.style.bottom = null;
+                    sideBar.style.top = fixedSpaces + 'px';
+                } else {
+                    // Scrolling up
+                    sideBar.style.top = null;
+                    sideBar.style.bottom = fixedSpaces + 'px';
+                }
+                lastScrollPosition = currentScrollPosition; // Update the last scroll position
+            }
+
+            const markers = document.querySelectorAll('.marker');
+            const markersObserver = new IntersectionObserver(entries => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        console.log('enter!');
+                        insideSideNav = !insideSideNav;
+                        // console.log('insideSideNav', insideSideNav);
+                        // enter.target.hasAttribute('top');
+                        // if (entry.target.hasAttribute('bottom')) {
+                        //     sideBar.style.top = null;
+                        //     sideBar.style.bottom = 0;
+                        //     sideBar.style.position = 'sticky';
+                        // } else {
+                        //     // sideBar.style.bottom = null;
+                        //     // sideBar.style.top = 0;
+                        //     console.log('top');
+                        // }
+                    }
+                })
+            }, {
+                threshold: 1
+            })
+            // Start observing the element
+            markersObserver.observe(markers[0]);
+            markersObserver.observe(markers[1]);
+        });
+    </script>
+</body>
+
+</html>

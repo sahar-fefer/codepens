@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Brands Slider Animation v2</title>
+</head>
+
+<body>
+    <div class="phone">
+        <div class="slider">
+            <div class="slide slide-1">
+                <div class="pill"></div>
+                <div class="pill"></div>
+                <div class="pill"></div>
+                <div class="pill"></div>
+                <div class="pill"></div>
+                <div class="pill"></div>
+                <div class="pill"></div>
+                <div class="pill"></div>
+            </div>
+            <div class="slide slide-2">
+                <div class="pill"></div>
+                <div class="pill"></div>
+                <div class="pill"></div>
+                <div class="pill"></div>
+                <div class="pill"></div>
+                <div class="pill"></div>
+                <div class="pill"></div>
+                <div class="pill"></div>
+            </div>
+            <div class="slide slide-3">
+                <div class="pill"></div>
+                <div class="pill"></div>
+                <div class="pill"></div>
+                <div class="pill"></div>
+                <div class="pill"></div>
+                <div class="pill"></div>
+                <div class="pill"></div>
+                <div class="pill"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const phone = document.querySelector(".phone");
+        const slide1 = document.querySelector(".slide-1");
+        const slide2 = document.querySelector(".slide-2");
+        const slide3 = document.querySelector(".slide-3");
+        const phoneMaxScroll = phone.scrollWidth - phone.clientWidth;
+        let phoneScrollLeft = phone.scrollLeft;
+        const direction = 40;
+
+
+        phone.addEventListener('scroll', function () {
+            phoneScrollLeft = phone.scrollLeft
+            move(slide1)
+            moveSlide(slide2, 80)
+            moveSlide(slide3, 120)
+        });
+
+        const move = (name) => {
+            name.style.left = -phoneScrollLeft + 'px'
+        }
+
+        // const moveSlide = (name, delay) => {
+        //     if (phoneScrollLeft <= delay || phoneScrollLeft >= (phoneMaxScroll - delay))
+        //         setTimeout(() => {
+        //             move(name)
+        //         }, 60)
+        //     else {
+        //         move(name)
+        //         console.log('delay', delay);
+        //         console.log('phoneScrollLeft', phoneScrollLeft);
+        //     }
+        // }
+
+        const moveSlide = (name, delay) => {
+            if (phoneScrollLeft <= direction || phoneScrollLeft >= (phoneMaxScroll - direction)) {
+                setTimeout(() => {
+                    move(name)
+                }, delay)
+            } else
+                move(name)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Brands Slider Animation</title>
+</head>
+
+<body>
+    <div class="phone">
+        <img class="top-section"
+            src="https://optimaxweb.glassesusa.com/image/upload/v1678949585/media/wysiwyg/codepen-media/sticky-button/top-section.jpg"
+            alt="">
+        <img class="bottom-section"
+            src="https://optimaxweb.glassesusa.com/image/upload/v1678949585/media/wysiwyg/codepen-media/sticky-button/bottom-section.jpg"
+            alt="">
+        <img class="sticky-button"
+            src="https://optimaxweb.glassesusa.com/image/upload/v1678949585/media/wysiwyg/codepen-media/sticky-button/sticky-button.jpg"
+            alt="">
+    </div>
+
+    <script>
+        const bottomSection = document.querySelector('.bottom-section');
+        const stickyButton = document.querySelector('.sticky-button');
+        document.addEventListener("scroll", (event) => {
+            const bottomSectionRect = bottomSection.getBoundingClientRect();
+            if (
+                bottomSection.offsetTop - window.scrollY <= 0
+            ) stickyButton.classList.add('show')
+            else {
+                stickyButton.classList.remove('show')
+
+            }
+        })
+    </script>
+</body>
+
+</html>

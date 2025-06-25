@@ -1,0 +1,67 @@
+:root {
+  --context: 1920;
+}
+
+body,
+html {
+  text-transform: uppercase;
+  color: black;
+  font-family: arial;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: auto;
+  -ms-text-size-adjust: auto;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  font-size: calc(100vw / var(--context));
+}
+
+.pin-trigger {
+  height: 100vh;
+  background-color: grey;
+}
+
+.tt-scroll {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.tt-scroll__title {
+  font-size: 204rem;
+  line-height: 1;
+  white-space: nowrap;
+  position: absolute;
+  left: 0;
+  top: 46%;
+  transform: translate(90vw, -50%);
+  z-index: 10;
+}
+
+.tt-scroll__content {
+  font-size: 64rem;
+  line-height: 70rem;
+  max-width: 1084rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tt-scroll__line {
+  overflow: hidden;
+}
+
+.tt-scroll__line__inner {
+  transform: translateY(100%);
+}
+
+footer {
+  background-color: red;
+  height: 100vh;
+}/*# sourceMappingURL=style.css.map */

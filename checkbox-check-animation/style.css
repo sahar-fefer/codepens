@@ -1,0 +1,131 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 200px;
+  background-color: #f5f5f5;
+}
+
+.input-wrapper {
+  background-color: #ffffff;
+  width: 250px;
+  height: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.input {
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid #aaaaaa;
+  -webkit-transition: all 0.15s linear 0s;
+  transition: all 0.15s linear 0s;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.input:hover, .input.loading {
+  border-color: #3595F3;
+  background-color: #F4FAFE;
+}
+
+.input.loading .loader {
+  width: 14px;
+  height: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: spin 1s infinite forwards linear;
+          animation: spin 1s infinite forwards linear;
+}
+
+.input.loading .loader::after {
+  content: "";
+  width: 14px;
+  height: 7px;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 1px solid #57b5ff;
+  border-bottom: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: auto;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  to {
+    -webkit-transform: rotate(405deg);
+            transform: rotate(405deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  to {
+    -webkit-transform: rotate(405deg);
+            transform: rotate(405deg);
+  }
+}
+
+svg {
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.2s ease 0.2s;
+  transition: all 0.2s ease 0.2s;
+  width: 16px;
+}
+
+.check {
+  background-color: #3595F3;
+  border-color: #3595F3;
+}
+
+.check:hover {
+  background-color: #3595F3;
+}
+
+.check svg {
+  stroke-dashoffset: 0;
+}

@@ -1,0 +1,30 @@
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 245px;
+  }
+}
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
+.title {
+  font-family: Roboto;
+  color: black;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  margin: 100px 50px;
+  width: 245px;
+  border-right: 4px solid black;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s steps(28, end), blink-caret 0.75s step-end infinite;
+}/*# sourceMappingURL=style.css.map */

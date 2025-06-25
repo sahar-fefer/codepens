@@ -1,0 +1,208 @@
+:root {
+  --try-on-width: 158px;
+  --try-on-height: 40px;
+  --button-radius: 24px;
+  --rotate-border-width: 4px;
+  --animation-duration: 0.2s;
+  --button-color: 206deg, 90%;
+  --primary-color: hsl(var(--button-color), 54%);
+  --brighter-color: hsl(var(--button-color), 100%);
+  --darker-color: hsl(var(--button-color), 24%);
+  --background-color: #f7f8f9;
+  //   --button-color: #2196f3;
+}
+
+body {
+  margin: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@property --rotate {
+  /* must register --a to animate it */
+  syntax: "<angle>";
+  initial-value: 0deg;
+  /* used only on pseudo, nowhere to be inherited, 
+	 * better perf if set false, see 
+	 * https://www.bram.us/2024/10/03/benchmarking-the-performance-of-css-property/ */
+  inherits: false;
+}
+
+.button {
+  display: inline-flex;
+
+  max-height: var(--try-on-height);
+  padding: 14px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--button-radius);
+  border: 2px solid var(--primary-color);
+  background: var(--primary-color);
+
+  color: var(--Greys-white, #fff);
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 15px;
+  cursor: pointer;
+}
+
+// .try-on,
+// .icon,
+// .text {
+//   // .try-on::before {
+//   opacity: 0;
+//   transition: var(--animation-duration) ease-in-out;
+//   transition-property: opacity;
+// }
+
+// .icon {
+//   transition-delay: 0.2s;
+// }
+
+// .text {
+//   transition-delay: 0.3s;
+// }
+
+.img-wrapper {
+  position: relative;
+}
+
+.try-on {
+  position: absolute;
+  height: var(--try-on-height);
+  width: var(--try-on-width);
+  border: 0;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+
+  &[animation="reset"] {
+    scale: 0.8 0.95;
+    opacity: 0;
+
+    .icon,
+    .text {
+      // &::before {
+      opacity: 0;
+    }
+  }
+
+  &[animation="appear"] {
+    scale: 1;
+    opacity: 1;
+    transition: var(--animation-duration) ease-out;
+    transition-property: opacity, scale;
+
+    .icon,
+    .text {
+      // &::before {
+      transition: var(--animation-duration) ease-out;
+      transition-property: opacity, scale;
+      opacity: 1;
+    }
+
+    .icon {
+      transition-delay: 0.2s;
+    }
+
+    .text {
+      transition-delay: 0.25s;
+    }
+
+    // &::before {
+    //   transition-delay: 0.3s;
+    // }
+  }
+
+  &[animation="rotate"] {
+    animation: border-rotate 2s linear;
+  }
+
+  &::before {
+    content: "";
+    /* grid doesn't work for stacking when a stacked item is text node */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    z-index: -1;
+    height: calc(var(--try-on-height) + var(--rotate-border-width));
+    width: calc(var(--try-on-width) + var(--rotate-border-width));
+    /* reserve space for border */
+    border: solid 10px;
+    // border-radius: var(--button-radius);
+    // border-image:
+    //         /* adjust gradient as needed, I just used a random palette */ conic-gradient(
+    //     from var(--rotate),
+    //     var(--primary-color),
+    //     var(--brighter-color),
+    //     var(--brighter-color)
+    //   )
+    //   1;
+    // filter: blur(3rem);
+    border-image:
+          /* adjust gradient as needed, I just used a random palette */ conic-gradient(
+        from var(--rotate),
+        var(--primary-color),
+        var(--brighter-color),
+        var(--primary-color),
+        var(--darker-color),
+        var(--primary-color)
+      )
+      1;
+    // transition-delay: 0.4s;
+    // animation: border-rotate 2s linear infinite;
+  }
+
+  &::after {
+    content: "";
+    /* grid doesn't work for stacking when a stacked item is text node */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: content-box;
+    z-index: 2;
+    height: calc(var(--try-on-height) + var(--rotate-border-width));
+    width: calc(var(--try-on-width) + var(--rotate-border-width));
+    /* reserve space for border */
+    border: solid 10px var(--background-color);
+    border-radius: calc(var(--button-radius) * 1.5);
+  }
+}
+
+/* animate --a from its initial-value 0deg to 1turn */
+@keyframes border-rotate {
+  100% {
+    --rotate: 1turn;
+  }
+}
+
+@keyframes scale {
+  0% {
+    scale: 0.8;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

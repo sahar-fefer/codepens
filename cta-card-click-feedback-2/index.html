@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CTA Wish List</title>
+</head>
+
+<body>
+    <div class="mobile-wrapper">
+        <img class="card"
+            src="https://optimaxweb.glassesusa.com/image/upload/v1693737953/media/wysiwyg/codepen-media/ctp-card.png"
+            alt="">
+        <img class="card"
+            src="https://optimaxweb.glassesusa.com/image/upload/v1693737953/media/wysiwyg/codepen-media/ctp-card.png"
+            alt="">
+        <img class="card"
+            src="https://optimaxweb.glassesusa.com/image/upload/v1693737953/media/wysiwyg/codepen-media/ctp-card.png"
+            alt="">
+        <img class="card"
+            src="https://optimaxweb.glassesusa.com/image/upload/v1693737953/media/wysiwyg/codepen-media/ctp-card.png"
+            alt="">
+        <img class="card"
+            src="https://optimaxweb.glassesusa.com/image/upload/v1693737953/media/wysiwyg/codepen-media/ctp-card.png"
+            alt="">
+        <img class="card"
+            src="https://optimaxweb.glassesusa.com/image/upload/v1693737953/media/wysiwyg/codepen-media/ctp-card.png"
+            alt="">
+    </div>
+
+    <script>
+        const boxes = document.querySelectorAll('.box');
+        [...boxes].map((box) => {
+            box.addEventListener('click', () => {
+                [...boxes].map((box) => {
+                    box.classList.remove('active')
+                })
+                box.classList.add('active')
+            })
+        })
+
+        const cards = document.querySelectorAll('.card');
+        [...cards].map((card) => {
+            card.addEventListener('click', () => {
+                card.classList.add('active')
+
+                setTimeout(() => {
+                    card.classList.remove('active')
+                }, 50);
+            })
+        })
+    </script>
+</body>
+
+</html>

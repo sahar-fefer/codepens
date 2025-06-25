@@ -1,0 +1,97 @@
+$slider-width: 100vw;
+$slider-height: 40px;
+
+body {
+    font-family: Roboto,
+        Arial,
+        sans-serif;
+
+    * {
+        box-sizing: border-box;
+    }
+}
+
+.trustpilot-slider {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: $slider-width;
+    height: $slider-height;
+    text-align: center;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    background: #F8FAFF;
+    border: 1px solid #F1F1F1;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.wrapper {
+    overflow: hidden;
+    position: relative;
+    width: $slider-width;
+    height: $slider-height;
+    z-index: 1;
+}
+
+.slides {
+    display: flex;
+    position: relative;
+    top: 0;
+    left: -$slider-width;
+    width: 10000px;
+}
+
+.slides.shifting {
+    transition: left .2s ease-out;
+}
+
+.slide {
+    width: $slider-width;
+    height: $slider-height;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+    position: relative;
+
+    svg {
+        margin-right: 10px;
+    }
+}
+
+.control {
+    position: absolute;
+    top: 0;
+    width: 32px;
+    height: $slider-height;
+    background: #F8FAFF;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.prev {
+    left: 0;
+    box-shadow: 17px 0px 8px -5px rgba(248, 250, 255, 0.75);
+
+    svg {
+        margin-left: auto;
+        margin-right: 4px;
+    }
+}
+
+.next {
+    right: 0;
+    box-shadow: -17px 0px 8px -5px rgba(248, 250, 255, 0.75);
+
+    svg {
+        margin-left: 4px;
+        margin-right: auto;
+    }
+}

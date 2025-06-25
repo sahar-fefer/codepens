@@ -1,0 +1,101 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    font-family: sans-serif;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    z-index: 2;
+    width: 130px;
+}
+
+button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    background: #fff;
+    color: #2d2d2d;
+    gap: 6px;
+    border: none;
+    z-index: 3;
+    overflow: hidden;
+    transition: all 0.15s cubic-bezier(0.78, 0.18, 0.31, 1.08);
+}
+
+button:hover {
+    color: #2498f3;
+}
+
+svg {
+    transition: all 0.2s;
+}
+
+ul {
+    background: #ffffff;
+    border-radius: 6px;
+    position: absolute;
+    padding: 0 4px;
+    pointer-events: none;
+    z-index: 2;
+    left: 0;
+    width: 127px;
+    height: 0;
+    box-sizing: border-box;
+    margin: 8px 0 0;
+    overflow: hidden;
+    border: 0px solid #f1f3f4;
+    transition: all 0.15s cubic-bezier(0.78, 0.18, 0.31, 1.08);
+}
+
+.dropdown.active ul {
+    opacity: 1;
+    height: 154px;
+    pointer-events: auto;
+    padding: 6px 4px;
+    border: 1px solid #f1f3f4;
+    box-shadow: 0px 1px 1px rgba(58, 72, 80, 0.07),
+        0px 4px 12px rgba(176, 189, 197, 0.13),
+        0px 1px 4px rgba(176, 189, 197, 0.07);
+}
+
+li {
+    list-style: none;
+    font-size: 14px;
+    line-height: 24px;
+    color: #2d2d2d;
+    padding: 2px 6px;
+    transition: all 0.2s;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+ul:hover li {
+    color: #4d4d4d;
+}
+
+ul li:hover {
+    background: #e7ebed;
+    border-radius: 2px;
+    color: #2d2d2d;
+}
+
+.dropdown.active svg {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}

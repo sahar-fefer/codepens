@@ -1,0 +1,204 @@
+body {
+  margin: 0;
+  font-family: 'Roboto';
+}
+
+.page {
+  background: #E5E5E5;
+  padding: 20px 0 100px;
+  margin-bottom: 200px;
+  position: relative;
+  height: auto;
+  -webkit-transition: padding 0.3s ease 0.3s;
+  transition: padding 0.3s ease 0.3s;
+}
+
+.page > div {
+  overflow: hidden;
+}
+
+.page[empty] {
+  padding: 130px 0;
+}
+
+.page[empty] .grid-wrapper,
+.page[empty] .button-wrapper {
+  opacity: 0;
+  -ms-grid-rows: 0fr;
+      grid-template-rows: 0fr;
+}
+
+.page[empty] .clear-all {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.page[empty] .empty-wrapper {
+  opacity: 1;
+  pointer-events: all;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+}
+
+.grid-wrapper,
+.button-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  -webkit-transition: grid-template-rows 0.3s ease 0.3s, opacity 0.3s ease;
+  transition: grid-template-rows 0.3s ease 0.3s, opacity 0.3s ease;
+  transition: grid-template-rows 0.3s ease 0.3s, opacity 0.3s ease, -ms-grid-rows 0.3s ease 0.3s;
+}
+
+.grid-wrapper > div,
+.grid-wrapper > .clear-all,
+.button-wrapper > div,
+.button-wrapper > .clear-all {
+  overflow: hidden;
+}
+
+.grid {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  row-gap: 24px;
+  gap: 24px;
+  max-width: 1296px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.button-wrapper {
+  max-width: 1293px;
+  margin: 0 auto;
+}
+
+.clear-all {
+  background: transparent;
+  border: none;
+  padding: 10px;
+  text-decoration: underline;
+  font-size: 16px;
+  line-height: 19px;
+  color: #4D4D4D;
+  display: block;
+  margin-left: auto;
+  margin-bottom: 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0.3s;
+  transition: all 0.3s ease 0.3s;
+}
+
+.card {
+  max-width: 416px;
+  width: 416px;
+  height: 387px;
+  background: #FFFFFF;
+  border: 1px solid #F7F8F9;
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05), 0px 4px 12px -1px rgba(0, 0, 0, 0.05), 0px 1px 4px 1px rgba(0, 0, 0, 0.04);
+          box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05), 0px 4px 12px -1px rgba(0, 0, 0, 0.05), 0px 1px 4px 1px rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+  padding: 12px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.login .text {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+  color: #0F0F0F;
+  margin: 24px 0;
+}
+
+.empty-wrapper {
+  opacity: 0;
+  pointer-events: none;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 0fr;
+      grid-template-rows: 0fr;
+  -webkit-transition: grid-template-rows 0.3s ease 0.3s, opacity 0.3s ease 0.6s;
+  transition: grid-template-rows 0.3s ease 0.3s, opacity 0.3s ease 0.6s;
+  transition: grid-template-rows 0.3s ease 0.3s, opacity 0.3s ease 0.6s, -ms-grid-rows 0.3s ease 0.3s;
+}
+
+.empty-wrapper > div {
+  overflow: hidden;
+}
+
+.empty-wrapper .empty {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.empty-wrapper .hart {
+  background: #FFFFFF;
+  border: 1px solid #DBE1E5;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 38px;
+}
+
+.empty-wrapper .header {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  color: #020621;
+}
+
+.empty-wrapper .sub-header {
+  font-size: 18px;
+  line-height: 24px;
+  color: #5B6971;
+  margin: 8px 0 20px;
+}

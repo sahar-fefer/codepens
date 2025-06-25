@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Checkbox check animation</title>
+</head>
+
+<body>
+    <div class="dropdown">
+        <button onclick="toggleButton()">
+            נושא הפניה
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 1L5 5L1 1" stroke="#2D2D2D" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+        <ul>
+            <li>Most Relevant</li>
+            <li>Most Popular</li>
+            <li>Name</li>
+            <li>Lowest Price</li>
+            <li>Highest Price</li>
+        </ul>
+    </div>
+    <script>
+        function toggleButton() {
+            var dropdown = document.getElementsByClassName("dropdown")[0];
+            dropdown.classList.toggle("active");
+        }
+
+        let value = 0;
+
+        const allOptions = document.querySelectorAll('li');
+
+        [...allOptions].map((option) => {
+            option.addEventListener("click", toggleButton);
+        })
+    </script>
+</body>
+
+</html>

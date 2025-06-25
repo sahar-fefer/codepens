@@ -1,0 +1,41 @@
+.phone {
+    width: 375px;
+    height: 667px;
+    overflow: auto;
+    background: #F1F3F4;
+    scroll-behavior: smooth;
+
+    &::after {
+        content: '';
+        width: 375px;
+        height: 667px;
+        border-radius: 12px;
+        border: 1px solid black;
+        z-index: 2;
+        box-shadow: 0 0 0 100vmax #FFFFFF;
+        position: absolute;
+        top: 8px;
+    }
+
+    .slider {
+        margin-top: 83px;
+        scroll-behavior: smooth;
+
+        .slide {
+            padding: 0 20px;
+            transition: all .1s;
+            // transition: all .05s;
+        }
+
+        .slide-2,
+        .slide-3 {
+            position: absolute;
+            left: 8px;
+        }
+
+        .slide-3 {
+            top: 184px;
+        }
+
+    }
+}

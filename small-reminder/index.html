@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Small Reminder</title>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="page">
+            <button class="toggle" onclick="toggleReminder()">Toggle Reminder</button>
+        </div>
+        <div class="reminder">
+            <div class="exit" onclick="toggleReminder()">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.40022 8.60034L8.60022 1.40034" stroke="#393939" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M8.60027 8.60034L1.40027 1.40034" stroke="#393939" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="info">
+                Get an extra 40% off
+                premium frames.
+            </div>
+            <div class="get">
+                Get Coupon
+                <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 1L13 5.5M13 5.5L8 10M13 5.5L1 5.5" stroke="white" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const reminder = document.querySelector('.reminder')
+
+        function toggleReminder() {
+            reminder.classList.toggle('open-reminder')
+        }
+    </script>
+</body>
+
+</html>

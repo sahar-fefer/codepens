@@ -1,0 +1,164 @@
+:root {
+  --margin-content: 20px;
+}
+
+.mobile-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 20px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.animate-cta {
+  background-color: white;
+  border: 1px solid #e7ebed;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  padding: 8px 28px;
+  transition: all 0.2s;
+}
+.animate-cta:hover {
+  background-color: #f2f2f2;
+}
+
+.mobile.active .home {
+  z-index: -1;
+}
+.mobile.active .funnel {
+  z-index: 1;
+}
+.mobile.active .nav,
+.mobile.active .content-container,
+.mobile.active .footer {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.4s;
+}
+.mobile.active .content {
+  transition: all 0.4s;
+}
+.mobile.active .nav {
+  margin-top: 0;
+}
+.mobile.active .content-container {
+  transition-delay: 0.2s;
+  transition: all 0.4s;
+}
+.mobile.active .footer {
+  bottom: 0;
+  transition-delay: 0.3s;
+}
+
+.mobile {
+  width: 375px;
+  height: 813px;
+  background: #f7f8f9;
+  position: relative;
+  border: 1px solid #b8c4cb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.home {
+  position: relative;
+}
+
+.open-funnel-cta {
+  width: 338px;
+  height: 60px;
+  position: absolute;
+  bottom: 169px;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+}
+
+.funnel {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.nav,
+.content-container,
+.content,
+.footer {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.nav {
+  margin-top: -20px;
+}
+.nav .exit {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 21px;
+  right: 22px;
+  transition: all 0.2s;
+}
+
+.content-container {
+  position: absolute;
+  top: 56px;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.content.active {
+  opacity: 1;
+  visibility: visible;
+}
+.content g,
+.content .back {
+  cursor: pointer;
+}
+
+.content2.active,
+.content3.active {
+  animation: slide-right 0.4s forwards;
+}
+
+.prev .content2.active,
+.prev .content3.active {
+  animation: slide-left 0.4s forwards;
+}
+
+.footer {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+}
+
+@keyframes slide-right {
+  from {
+    margin-left: 20px;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+@keyframes slide-left {
+  from {
+    margin-left: -20px;
+  }
+  to {
+    margin-left: 0;
+  }
+}/*# sourceMappingURL=style.css.map */

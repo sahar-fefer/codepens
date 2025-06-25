@@ -1,0 +1,62 @@
+body {
+    margin: 79px 0;
+    font-family: "Roboto";
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+$animation-time: 4s;
+$side-animation: 4px;
+$side-rotate: 2deg;
+
+.hand {
+    transform-origin: bottom;
+}
+
+.hand-active {
+    animation: nonono $animation-time ease-out forwards infinite;
+}
+
+.circle-active {
+    animation: circle-move $animation-time ease-out forwards infinite;
+}
+
+@keyframes nonono {
+
+    0%,
+    25%,
+    50% {
+        transform: translateX(0px) rotate(0deg);
+    }
+
+    5%,
+    35% {
+        transform: translateX($side-animation) rotate($side-rotate);
+    }
+
+    10%,
+    30% {
+        transform: translateX(-$side-animation) rotate(-$side-rotate);
+    }
+}
+
+@keyframes circle-move {
+
+    0%,
+    25%,
+    50% {
+        transform: translateX(0px);
+    }
+
+    5%,
+    35% {
+        transform: translateX($side-animation);
+    }
+
+    10%,
+    30% {
+        transform: translateX(-$side-animation);
+    }
+}

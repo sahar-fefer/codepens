@@ -1,0 +1,106 @@
+.card-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+.card {
+  width: 313px;
+  height: 352px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.card:hover .hover-state {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card:hover .main-img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.card:hover .footer {
+  bottom: -48px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.main-img {
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  will-change: transform;
+}
+
+.hover-state {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  inset: 0;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7)));
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  z-index: 2;
+}
+
+.hover-state .cta {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #3a4850;
+  background: #ffffff;
+  border: 1px solid #f1f1f1;
+  -webkit-box-shadow: 0px 1px 2px rgba(58, 72, 80, 0.07), 0px 6px 13px rgba(176, 189, 197, 0.14), 0px 1px 6px rgba(176, 189, 197, 0.09);
+          box-shadow: 0px 1px 2px rgba(58, 72, 80, 0.07), 0px 6px 13px rgba(176, 189, 197, 0.14), 0px 1px 6px rgba(176, 189, 197, 0.09);
+  border-radius: 100px;
+  padding: 12px 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.footer {
+  width: 100%;
+  height: 88px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}

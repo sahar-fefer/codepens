@@ -1,0 +1,262 @@
+body {
+  font-family: 'Roboto';
+  margin: 0;
+  padding: 0;
+}
+
+body * {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.background-page {
+  width: 100vw;
+  height: 100vh;
+}
+
+.background-page.disactive::after {
+  content: "";
+  background: none;
+}
+
+.background-page.disactive .open-popup {
+  z-index: 2;
+}
+
+.background-page::after {
+  content: "";
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+}
+
+.background-page img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.background-page .open-popup {
+  font-size: 40px;
+  background-color: aquamarine;
+  padding: 25px 40px;
+  border-radius: 12px;
+  cursor: pointer;
+  z-index: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.popup {
+  position: absolute;
+  width: 862px;
+  height: 484px;
+  top: 75%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  -webkit-transition: all cubic-bezier(0.16, 0.3, 0.22, 0.75) 0.2s;
+  transition: all cubic-bezier(0.16, 0.3, 0.22, 0.75) 0.2s;
+}
+
+.popup.popup-open {
+  top: 50%;
+  opacity: 1;
+}
+
+.exit {
+  position: absolute;
+  right: 16px;
+  top: 12px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.exit:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.small-video {
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  height: 137px;
+  width: 244px;
+  cursor: pointer;
+  position: relative;
+}
+
+.small-video::after {
+  content: "";
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url(image.png);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(image.png);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+}
+
+.small-video:hover .play {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.small-video .close-video {
+  width: 100%;
+}
+
+.small-video .play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 42px;
+  height: 42px;
+  z-index: 1;
+}
+
+.small-video .play svg {
+  margin-left: 5px;
+}
+
+.big-video {
+  overflow: hidden;
+  background: white;
+  position: absolute;
+  width: 244px;
+  height: 137px;
+  left: 26px;
+  top: 40px;
+  border-radius: 12px;
+  opacity: 0;
+  -webkit-transition: all 0.01s;
+  transition: all 0.01s;
+}
+
+.big-video .nav-bar {
+  position: absolute;
+  top: 0;
+}
+
+.big-video .control-bar {
+  position: absolute;
+  bottom: 0;
+}
+
+.video-open .big-video {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  inset: 0;
+  opacity: 1;
+  border-radius: 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.svg-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hover-button {
+  cursor: pointer;
+}
+
+.hover-button:hover {
+  opacity: 0.4;
+}
+
+.left-side {
+  padding: 40px 29px 0 26px;
+  background: #F1F3F4;
+  width: 299px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.left-side .name {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #020621;
+  margin: 20px 0 10px;
+}
+
+.left-side .time {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  color: #898989;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.left-side .time svg {
+  margin-right: 6px;
+}
+
+.right-side {
+  position: relative;
+  background: white;
+  width: 563px;
+  height: 484px;
+  padding: 50px 35px 0 39px;
+}
+
+.right-side .arrow {
+  width: 24px;
+  height: 24px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  background: white;
+  position: absolute;
+  top: 95px;
+  left: -12px;
+}
+
+.right-side .header {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #020621;
+}
+
+.right-side .header-2 {
+  margin-top: 32px;
+}
+
+.right-side .text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #5B6971;
+  margin-top: 10px;
+}

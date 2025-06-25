@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Checkbox check animation</title>
+</head>
+
+<body>
+    <div class="input-wrapper">
+        <div class="input">
+            <svg width="100%" height="100%" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" stroke-dasharray="16px" stroke-dashoffset="16px" viewBox="0 0 14 11">
+                <polyline points="2.000 5.443, 5.357 9.000, 12.000 2.000"></polyline>
+            </svg>
+            <div class="loader"></div>
+        </div>
+    </div>
+    <script>
+        const inputElem = document.querySelector('.input');
+        let isInputCheck = false;
+
+        inputElem.addEventListener("click",
+            () => {
+                isInputCheck = !isInputCheck;
+                inputElem.classList.remove('check')
+                inputElem.classList.add('loading')
+                setTimeout(() => {
+                    if (isInputCheck)
+                        inputElem.classList.add('check')
+                    inputElem.classList.remove('loading')
+                }, 2000)
+            }
+        );
+    </script>
+</body>
+
+</html>

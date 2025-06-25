@@ -1,0 +1,370 @@
+:root {
+  --side-space: 16px;
+  --card-left-space: 27px;
+  --phone-frame-width: 265px;
+  --before-after-calc: calc(
+    100% - var(--phone-frame-width) - ((100% - var(--phone-frame-width)) / 2)
+  );
+}
+@media only screen and (min-width: 768px) {
+  :root {
+    --side-space: 19px;
+    --card-left-space: 35px;
+    --phone-frame-width: 302px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  :root {
+    --side-space: auto;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  :root {
+    --side-space: auto;
+    --phone-frame-width: 328px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  :root {
+    --card-left-space: 43px;
+    --phone-frame-width: 375px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .m-only {
+    display: none !important;
+  }
+}
+
+.t-block {
+  display: none !important;
+}
+@media only screen and (min-width: 768px) {
+  .t-block {
+    display: block !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.filler {
+  height: 100vh;
+  background: #f5f5f5;
+  font-size: 40px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (min-width: 1024px) {
+  .filler {
+    font-size: 80px;
+  }
+}
+
+.perfect-match {
+  background: #0f0f0f;
+}
+.perfect-match .header {
+  color: var(--Greys-white, #fff);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 130%;
+  text-align: center;
+  margin: 0;
+  margin-left: var(--side-space);
+  margin-right: var(--side-space);
+  padding-bottom: 40px;
+}
+@media only screen and (min-width: 768px) {
+  .perfect-match .header {
+    padding-bottom: 52px;
+    font-size: 28px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .perfect-match .header {
+    font-size: 32px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .perfect-match .header {
+    padding-bottom: 63px;
+    font-size: 40px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .perfect-match .header {
+    padding-bottom: 30px;
+    font-size: 50px;
+  }
+}
+.perfect-match .app-wrapper .btn {
+  margin: 0 auto;
+}
+.perfect-match .app {
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+}
+.perfect-match .app .face {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 525px;
+  margin: auto;
+  margin-top: 42px;
+}
+@media only screen and (min-width: 768px) {
+  .perfect-match .app .face {
+    height: 592px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .perfect-match .app .face {
+    height: 661px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .perfect-match .app .face {
+    height: 753px;
+  }
+}
+.perfect-match .app .phone {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--Greys-white, #fff);
+}
+.perfect-match .app .phone,
+.perfect-match .app .phone-frame {
+  width: var(--phone-frame-width);
+  height: 530px;
+}
+@media only screen and (min-width: 768px) {
+  .perfect-match .app .phone,
+  .perfect-match .app .phone-frame {
+    height: 604px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .perfect-match .app .phone,
+  .perfect-match .app .phone-frame {
+    height: 656px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .perfect-match .app .phone,
+  .perfect-match .app .phone-frame {
+    height: 750px;
+  }
+}
+.perfect-match .app .phone-frame {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+.perfect-match .app .poppins {
+  font-family: Poppins;
+}
+.perfect-match .app .title {
+  position: absolute;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  text-align: center;
+}
+@media only screen and (min-width: 1440px) {
+  .perfect-match .app .title {
+    font-size: 16px;
+    line-height: 28px;
+    width: 260px;
+    top: 58px;
+  }
+}
+.perfect-match .app .face-glasses {
+  position: absolute;
+  top: 198px;
+  left: 51.5%;
+  transform: translateX(-50%);
+  width: 168px;
+  height: 84px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.perfect-match .app .face-glasses[active] {
+  opacity: 1;
+}
+@media only screen and (min-width: 768px) {
+  .perfect-match .app .face-glasses {
+    width: 190px;
+    height: 94px;
+    top: 214px;
+    left: 51.1%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .perfect-match .app .face-glasses {
+    width: 212px;
+    height: 106px;
+    top: 232px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .perfect-match .app .face-glasses {
+    width: 242px;
+    height: 120px;
+    top: 260px;
+    left: 51.2%;
+  }
+}
+.perfect-match .app .cards-wrapper {
+  position: absolute;
+  bottom: 44px;
+  overflow-x: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 37px;
+}
+@media only screen and (min-width: 768px) {
+  .perfect-match .app .cards-wrapper {
+    gap: 50px;
+    bottom: 50px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .perfect-match .app .cards-wrapper {
+    gap: 60px;
+    bottom: 58px;
+  }
+}
+.perfect-match .app .card-wrap:first-child {
+  margin-left: var(--card-left-space);
+}
+.perfect-match .app .card-wrap[active] .card {
+  border: 1px solid var(--Action-Blue-DodgerBlue, #2196f3);
+  box-shadow: 0px 0px 6px 0px #2196f3 inset;
+}
+.perfect-match .app .card-wrap[active] .check {
+  opacity: 1;
+}
+.perfect-match .app .card {
+  position: relative;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.01);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  width: 211px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+@media only screen and (min-width: 768px) {
+  .perfect-match .app .card {
+    width: 233px;
+    height: 119px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .perfect-match .app .card {
+    width: 256px;
+    height: 134px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .perfect-match .app .card {
+    width: 290px;
+    height: 134px;
+  }
+}
+.perfect-match .app .no {
+  font-size: 13px;
+  font-weight: 500;
+  margin-left: 9px;
+  margin-bottom: 11px;
+}
+.perfect-match .app .check {
+  border-radius: 7.365px 0px 3.683px 0px;
+  background: var(--Action-Blue-DodgerBlue, #2196f3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 26px;
+  height: 22px;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  transition: opacity 0.2s;
+}
+.perfect-match .app .check svg {
+  width: 10px;
+  height: 10px;
+}
+.perfect-match .app .glasses {
+  width: 140px;
+  height: 70px;
+}
+@media only screen and (min-width: 768px) {
+  .perfect-match .app .glasses {
+    width: 180px;
+    height: 90px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .perfect-match .app .glasses {
+    width: 210px;
+    height: 105px;
+    margin-top: -4px;
+  }
+}
+.perfect-match .app .name {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+}
+@media only screen and (min-width: 768px) {
+  .perfect-match .app .name {
+    font-size: 13px;
+    line-height: normal;
+    margin-top: 2px;
+  }
+}
+
+.btn {
+  height: 48px;
+  width: 224px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.01);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin: 0 auto;
+}
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #0f0f0f;
+}/*# sourceMappingURL=style.css.map */

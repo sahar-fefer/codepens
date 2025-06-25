@@ -1,0 +1,121 @@
+.phone-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.phone {
+    width: 375px;
+    height: 612px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid black;
+    position: absolute;
+    left: 50%;
+    top: calc(50% - 30px);
+    transform: translate(-50%, -50%);
+}
+
+.loader {
+    width: 100%;
+    opacity: 1;
+    position: absolute;
+    transition: all .3s;
+}
+
+.loader.dis-active {
+    opacity: 0;
+    transform: translateY(-15px);
+}
+
+.end-page.active {
+    opacity: 1;
+}
+
+.end-page {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.end-page .box {
+    opacity: 0;
+    width: 254px;
+    margin: auto;
+    transition: all .5s;
+    transform: translateY(20px);
+}
+
+.end-page.active .box {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.box:nth-child(1) {
+    margin-top: 82px;
+    transition-delay: .6s;
+}
+
+.box:nth-child(2) {
+    transition-delay: 1.2s;
+}
+
+.box:nth-child(3) {
+    transition-delay: 1.8s;
+}
+
+.box:nth-child(4) {
+    transition-delay: 2.4s;
+}
+
+.box:nth-child(5) {
+    width: 181px;
+    margin-top: 6px;
+    transition-delay: 3s;
+}
+
+.re-animation {
+    font-family: Roboto;
+    font-size: 18px;
+    display: flex;
+    box-shadow: 0px -1px 0px rgba(58, 72, 80, 0.07),
+        0px -2px 11px -1px rgba(176, 189, 197, 0.12);
+    background: rgb(238, 238, 238);
+    position: absolute;
+    height: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.re-animation:hover svg {
+    -webkit-animation: rotate 0.8s infinite cubic-bezier(0.09, 0.9, 0.83, 0.67) ease-in;
+    animation: rotate 0.8s infinite cubic-bezier(0.09, 0.9, 0.83, 0.67) ease-in;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.re-animation svg {
+    margin-right: 5px;
+}
+
+@-webkit-keyframes rotate {
+    100% {
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg);
+    }
+  }
+  
+  @keyframes rotate {
+    100% {
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg);
+    }
+  }
+  

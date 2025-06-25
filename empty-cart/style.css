@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+.gallery {
+  font-family: "Roboto";
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gallery .categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+}
+
+.gallery .category-button {
+  font-size: 20px;
+  line-height: 23px;
+  color: #89959c;
+  background-color: transparent;
+  border: none;
+  padding: 0 10px 13px;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+
+.gallery .category-button:hover {
+  border-bottom: 2px solid #B8C4CB;
+}
+
+.gallery .category-button.active {
+  color: #2196f3;
+  border-bottom: 2px solid #2196f3;
+}
+
+.gallery .products-gallery {
+  width: 1180px;
+  height: 278px;
+  position: relative;
+  margin-top: 40px;
+}
+
+.gallery .products {
+  position: absolute;
+  inset: 0;
+}
+
+.gallery .products.active {
+  z-index: 2;
+}
+
+.gallery .products.active .cards-wrapper {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+.gallery .products .cards-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.gallery .products .card {
+  text-align: center;
+}
+
+.gallery .products .card img {
+  width: 277px;
+  height: 138px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.gallery .products .card .name {
+  margin: 12px 0 1px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #0f0f0f;
+}
+
+.gallery .products .card .price,
+.gallery .products .card .details {
+  font-size: 14px;
+  line-height: 16px;
+  color: #89959c;
+}
+
+.gallery .products .shop {
+  width: 249px;
+  height: 48px;
+  background: #2196f3;
+  border: 1px solid #2196f3;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  text-decoration: none;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 44px auto 0;
+}
+
+.gallery .arrow {
+  position: absolute;
+  top: 61px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 1px 1px rgba(58, 72, 80, 0.7), 0 4px 12px -1px rgba(176, 189, 197, 0.13), 0 1px 4px 1px rgba(176, 189, 197, 0.13);
+          box-shadow: 0 1px 1px rgba(58, 72, 80, 0.7), 0 4px 12px -1px rgba(176, 189, 197, 0.13), 0 1px 4px 1px rgba(176, 189, 197, 0.13);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  outline: none;
+  width: 40px;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+}
+
+.gallery .arrow.left {
+  left: -60px;
+}
+
+.gallery .arrow.left:hover {
+  margin-left: -3px;
+}
+
+.gallery .arrow.right {
+  right: -60px;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.gallery .arrow.right:hover {
+  margin-right: -3px;
+}

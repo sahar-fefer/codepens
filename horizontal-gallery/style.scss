@@ -1,0 +1,108 @@
+// .banner {
+//     height: 700px;
+//     width: 100%;
+//     background-color: aquamarine;
+// }
+// .section {
+//     height: 700px;
+//     width: 100%;
+//     background-color: rgb(127, 214, 255);
+// }
+// .side-gallery {
+//     height: 700px;
+//     width: 100%;
+//     background-color: rgb(208, 127, 255);
+// }
+// .footer {
+//     height: 700px;
+//     width: 100%;
+//     background-color: rgb(255, 214, 127);
+// }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  html,
+  body {
+    background-color: white;
+  }
+  
+  h3 {
+    color: rgb(0, 0, 0);
+  }
+  
+  .slider-wrap {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 90%;
+    height: 300px;
+    border: 1px solid rgb(0, 0, 0);
+    cursor: grab;
+  }
+  
+  .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+  }
+  
+  .slider-inner {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    top: 0;
+    left: 0;
+    width: 3000px;
+    height: 100%;
+    display: flex;
+  }
+  
+  .item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 98%;
+    top: 1%;
+    background-color: rgb(205, 205, 205);
+    border: 1px solid rgb(0, 0, 0);
+  }
+  
+  .progress-bar {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+  
+  .prog-bar-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: rgb(62, 62, 62);
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .slider::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .slider {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }

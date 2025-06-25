@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="phone">
+    <nav>
+        <div class="box" data-id="0">
+            <svg class="shop" width="29" height="20" viewBox="0 0 29 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M27.3684 9.40497C27.3684 14.0466 23.5979 17.8099 18.9474 17.8099C14.2969 17.8099 10.5264 14.0466 10.5264 9.40497C10.5264 4.76333 14.2969 1 18.9474 1C23.5979 1 27.3684 4.76333 27.3684 9.40497Z"
+                    stroke="#0F0F0F" stroke-width="1.5" />
+                <path d="M24.5537 15.8848L27.6259 18.957" stroke="#0F0F0F" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M8.16846 3.5957H1" stroke="#0F0F0F" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M6.12033 9.74023H1" stroke="#0F0F0F" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M8.16846 15.8848H1" stroke="#0F0F0F" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            Shop
+        </div>
+        <div class="box" data-id="1">
+            <svg class="wishlist" width="23" height="20" viewBox="0 0 23 20" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M11.8994 19C13.6877 17.9623 22.5284 13.0852 22.2431 6.42336C21.9569 -0.237545 13.2071 -0.742444 11.8994 4.79616C10.5926 -0.742444 1.8419 -0.237545 1.5566 6.42336C1.2704 13.0852 10.1111 17.9623 11.8994 19Z"
+                    stroke="#0F0F0F" stroke-width="1.5" stroke-linejoin="round" />
+            </svg>
+            Wishlist
+        </div>
+        <div class="box" data-id="2">
+            <svg class="cart" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="9.07323" cy="19.1015" r="0.955061" fill="#0F0F0F" stroke="#0F0F0F" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="17.6689" cy="19.1015" r="0.955061" fill="#0F0F0F" stroke="#0F0F0F" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                    d="M0.955078 0.955078H4.15586L7.02639 12.8697C7.23225 13.8719 8.13011 14.5849 9.16025 14.5643H17.6686C18.6988 14.5849 19.5966 13.8719 19.8025 12.8697L21.0114 5.25285H5.64762"
+                    stroke="#0F0F0F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Cart
+        </div>
+        <div class="box" data-id="3">
+            <svg class="account" width="16" height="20" viewBox="0 0 16 20" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12.3591 5.36029C12.3591 7.65667 10.4954 9.52039 8.19906 9.52039C5.90274 9.52039 4.03906 7.65667 4.03906 5.36029C4.03906 3.06392 5.90274 1.2002 8.19906 1.2002C10.4954 1.2002 12.3591 3.06392 12.3591 5.36029V5.36029Z"
+                    stroke="#0F0F0F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                    d="M14.9994 19.2041C14.9994 15.625 11.955 12.7236 8.19941 12.7236C4.44388 12.7236 1.39941 15.625 1.39941 19.2041"
+                    stroke="#0F0F0F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Account
+        </div>
+    </nav>
+    </div>
+
+    <script>
+        const boxes = document.querySelectorAll('.box');
+        let activeBox = undefined;
+
+        Array.from(boxes).forEach(function (box) {
+            box.addEventListener('click', function () {
+                if (activeBox) boxes[activeBox].classList.remove('active');
+                activeBox = this.dataset.id;
+                boxes[activeBox].classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

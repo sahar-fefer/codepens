@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Try On Button</title>
+  </head>
+
+  <body>
+    <div class="img-wrapper">
+      <img
+        src="https://optimaxweb.glassesusa.com/image/upload/v1734258735/media/wysiwyg/codepen-media/glasses-box.png"
+        alt=""
+      />
+      <div class="try-on">
+        <div class="inner-button">
+          <svg
+            class="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="21"
+            height="14"
+            viewBox="0 0 21 14"
+            fill="none"
+          >
+            <g clip-path="url(#clip0_2_3)">
+              <path
+                d="M20.2022 1.97435C20.0982 1.9086 19.9796 1.87113 19.8574 1.86548C19.7353 1.85983 19.6138 1.8862 19.5044 1.94209L14.8047 4.34519V2.59841C14.8047 2.01494 14.578 1.45537 14.1745 1.0428C13.771 0.63022 13.2237 0.398438 12.6531 0.398438H2.6125C2.04187 0.398438 1.49461 0.63022 1.09112 1.0428C0.687619 1.45537 0.460938 2.01494 0.460938 2.59841V11.3983C0.460938 11.9818 0.687619 12.5414 1.09112 12.9539C1.49461 13.3665 2.04187 13.5983 2.6125 13.5983H12.6531C13.2237 13.5983 13.771 13.3665 14.1745 12.9539C14.578 12.5414 14.8047 11.9818 14.8047 11.3983V9.65154L19.5044 12.0583C19.614 12.1143 19.7359 12.1407 19.8583 12.1349C19.9808 12.129 20.0997 12.0912 20.2038 12.025C20.3079 11.9588 20.3936 11.8665 20.4529 11.7568C20.5121 11.647 20.5428 11.5236 20.5422 11.3983V2.59841C20.5422 2.47339 20.511 2.35042 20.4515 2.2412C20.392 2.13197 20.3062 2.04012 20.2022 1.97435ZM7.63281 9.93167C7.06542 9.93167 6.51078 9.75963 6.03902 9.43731C5.56725 9.115 5.19956 8.65688 4.98243 8.12089C4.7653 7.5849 4.70849 6.99511 4.81918 6.42611C4.92987 5.8571 5.2031 5.33444 5.6043 4.92421C6.0055 4.51398 6.51666 4.23461 7.07314 4.12143C7.62963 4.00824 8.20644 4.06633 8.73063 4.28835C9.25483 4.51036 9.70286 4.88633 10.0181 5.36871C10.3333 5.85109 10.5016 6.41821 10.5016 6.99836C10.5016 7.77632 10.1993 8.52242 9.66132 9.07252C9.12333 9.62262 8.39365 9.93167 7.63281 9.93167Z"
+                fill="white"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_2_3">
+                <rect width="21" height="14" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+          <div class="text">Live Try On</div>
+        </div>
+      </div>
+    </div>
+    <div class="buttons-wrapper">
+      <div class="button" type="appear">Appear</div>
+      <div class="button" type="rotate">Rotate</div>
+      <div class="button" type="glow">Glow</div>
+    </div>
+
+    <script>
+      const buttons = document.querySelectorAll(".button");
+      const tryOnButton = document.querySelector(".try-on");
+
+      [...buttons].map((button) => {
+        button.addEventListener("click", (event) => {
+          const type = button.getAttribute("type");
+
+          type === "appear"
+            ? tryOnButton.setAttribute("animation", "appear-reset")
+            : tryOnButton.setAttribute("animation", "");
+          setTimeout(() => {
+            tryOnButton.setAttribute("animation", type);
+          }, 1000);
+        });
+      });
+    </script>
+  </body>
+</html>

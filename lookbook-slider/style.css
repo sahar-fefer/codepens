@@ -1,0 +1,236 @@
+:root {
+  --max-width: 100%;
+  --side-space: 16px;
+  --cod-gray: #0F0F0F;
+  --foam: #F4FAFE;
+  --dodger-blue: #2196F3;
+  --nevada: #5B6971;
+  --outer-space: #232B30;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --max-width: 730px;
+    --side-space: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --max-width: 936px;
+    --side-space: 44px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --max-width: 1164px;
+    --side-space: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --max-width: 1296px;
+  }
+}
+
+html {
+  overflow-y: scroll;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+
+body {
+  overflow-y: visible;
+  position: relative;
+  height: unset;
+}
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+  position: relative;
+}
+
+body * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body img {
+  max-width: 100%;
+}
+
+.firstContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  background: yellow;
+}
+
+.lastContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  background: yellow;
+}
+
+.gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+@media (min-width: 1024px) {
+  .gallery {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+@media (min-width: 1280px) {
+  .gallery {
+    height: 100vh;
+  }
+}
+
+.gallery .img-wrapper:first-child {
+  margin-left: var(--side-space);
+}
+
+.gallery .img-wrapper:last-child {
+  margin-right: var(--side-space);
+}
+
+.gallery .img-wrapper:hover svg {
+  margin-right: 6px;
+}
+
+.gallery .img-wrapper:hover .text {
+  width: 71px;
+  margin-right: 12px;
+}
+
+@media (min-width: 1024px) {
+  .gallery .img-wrapper {
+    -webkit-animation: skeleton 2s infinite;
+            animation: skeleton 2s infinite;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  @-webkit-keyframes skeleton {
+    0% {
+      background: #f8f8f8;
+    }
+    50% {
+      background: #f1f1f1;
+    }
+    100% {
+      background: #f8f8f8;
+    }
+  }
+  @keyframes skeleton {
+    0% {
+      background: #f8f8f8;
+    }
+    50% {
+      background: #f1f1f1;
+    }
+    100% {
+      background: #f8f8f8;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .gallery .img-wrapper {
+    min-width: 526px;
+    width: 526px;
+  }
+  .gallery .img-wrapper:first-child {
+    margin-left: 20px;
+  }
+  .gallery .img-wrapper:last-child {
+    margin-right: 20px;
+  }
+}
+
+.gallery img {
+  width: calc(100vw - 28px - var(--side-space));
+  max-width: 95vw;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .gallery img {
+    width: calc(100vw - 40px - var(--side-space));
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery img {
+    width: 100%;
+  }
+}
+
+.gallery .view-frame {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  padding: 6px 0;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.199383);
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.199383);
+  border-radius: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gallery .view-frame svg {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.gallery .view-frame .text {
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}

@@ -1,0 +1,207 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto';
+}
+
+$width: 1024px;
+$nav-height: 96px;
+$load-time: 1.6s;
+
+.face-scanner {
+    width: 1024px;
+    height: 1274px;
+    position: relative;
+    // background-color: aqua;
+
+    .background {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(57.97% 59.96% at 50% 44.69%, rgba(0, 0, 0, 0) 58.33%, rgba(0, 0, 0, 0) 58.34%, rgba(0, 0, 0, 0.25) 100%);
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(31% 32.9% at 50% 43.56%, rgba(0, 0, 0, 0) 99.99%, rgba(0, 0, 0, 0.3) 100%);
+            transition: opacity .2s ease $load-time;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            background: radial-gradient(31% 32.9% at 50% 43.56%, rgba(0, 0, 0, 0) 99.99%, rgba(18, 98, 162, 0.5) 100%);
+            transition: opacity .2s ease $load-time;
+        }
+    }
+
+    &.active {
+        .ellipse-border {
+            animation: dash 3s linear forwards infinite;
+        }
+    }
+
+    &.done {
+        .background {
+            &::before {
+                content: '';
+                opacity: 0;
+            }
+
+            &::after {
+                content: '';
+                opacity: 1;
+            }
+        }
+
+        .load {
+            animation: load $load-time cubic-bezier(.6, 0, .5, .8) forwards !important;
+        }
+
+        .scan-wave::after {
+            content: '';
+            transform: translateY(835px);
+        }
+    }
+
+    &.active {
+        .ellipse-border {
+            animation: dash 3s linear forwards infinite;
+        }
+    }
+
+    &.done {
+        .background {
+            &::before {
+                content: '';
+                opacity: 0;
+            }
+
+            &::after {
+                content: '';
+                opacity: 1;
+            }
+        }
+
+        .load {
+            animation: load $load-time cubic-bezier(.6, 0, .5, .8) forwards !important;
+        }
+
+        .scan-wave::after {
+            content: '';
+            transform: translateY(835px);
+        }
+    }
+
+    &.active {
+        .ellipse-border {
+            animation: dash 3s linear forwards infinite;
+        }
+    }
+
+    &.done {
+        .background {
+            &::before {
+                content: '';
+                opacity: 0;
+            }
+
+            &::after {
+                content: '';
+                opacity: 1;
+            }
+        }
+
+        .load {
+            animation: load $load-time cubic-bezier(.6, 0, .5, .8) forwards !important;
+        }
+
+        .scan-wave::after {
+            content: '';
+            transform: translateY(835px);
+        }
+    }
+}
+
+.scan-wave {
+    width: 635px;
+    height: 835px;
+    position: absolute;
+    top: 138px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        transform: translateY(-200px);
+        transition: transform 1s ease;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.25) 100%);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+}
+
+.ellipse-border {
+    stroke-dasharray: 12px 14px;
+    stroke-dashoffset: 10%;
+    stroke-linecap: round;
+    stroke: black;
+}
+
+.load {
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+    stroke-dashoffset: 2490;
+    stroke-dasharray: 2490;
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 12px 14px;
+        stroke-dashoffset: 0%;
+    }
+
+    50% {
+        stroke-dasharray: 6px 20px;
+    }
+
+    100% {
+        stroke-dasharray: 12px 14px;
+        stroke-dashoffset: -13%;
+    }
+}
+
+@keyframes load {
+    0% {
+        stroke-dashoffset: 2320;
+        opacity: 0;
+        stroke-width: 3;
+    }
+
+    2% {
+        stroke-dashoffset: 2320;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        stroke-width: 8;
+    }
+}
+
+@keyframes start-over {
+
+    100% {
+        transform: rotate(180deg);
+    }
+}

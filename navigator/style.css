@@ -1,0 +1,80 @@
+:root {
+    --dodger-blue: #2196F3;
+}
+
+.phone {
+    width: 375px;
+    height: 667px;
+    border-radius: 12px;
+    border: 1px solid black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+nav {
+    font-family: Roboto;
+    display: flex;
+    box-shadow: 0px -1px 0px rgba(58, 72, 80, 0.07), 0px -2px 11px -1px rgba(176, 189, 197, 0.12);
+    padding: 15px 0 13px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    gap: 52px;
+    justify-content: center;
+}
+
+.box {
+    transition: all .1s ease-in-out;
+    font-size: 11px;
+    line-height: 12px;
+    color: #0F0F0F;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.box:active {
+    transform: scale(.95);
+}
+
+svg {
+    display: block;
+    margin: auto;
+    margin-bottom: 8px;
+}
+
+.cart {
+    margin-bottom: 7px;
+}
+
+.box.active {
+    color: var(--dodger-blue);
+    font-weight: bold;
+}
+
+.box.active svg *[stroke]:not([stroke=""]) {
+    stroke: var(--dodger-blue);
+    stroke-width: 2px;
+}
+
+.box.active svg *[fill]:not([fill=""]) {
+    fill: var(--dodger-blue);
+}
+
+.shop {
+    width: 29px;
+}
+
+.wishlist {
+    width: 40px;
+}
+
+.cart {
+    width: 22px;
+}
+
+.account {
+    width: 42px;
+}

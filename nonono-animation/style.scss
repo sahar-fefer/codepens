@@ -1,0 +1,111 @@
+body {
+    margin: 79px 0;
+    font-family: 'Roboto';
+}
+
+.page-wrapper {
+    width: 1030px;
+    height: 515px;
+    margin: 0 auto;
+    position: relative;
+}
+
+img {
+    width: 1030px;
+    height: 515px;
+    object-fit: cover;
+}
+
+$animation-time: 2s;
+
+.explore {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    .hand {
+        transform-origin: bottom;
+    }
+
+    .hand-active {
+        animation: nonono $animation-time ease-out forwards;
+    }
+
+    .circle {
+        fill: rgba(234, 234, 234, .7);
+    }
+
+    .circle-active {
+        animation: circle-move $animation-time ease-out forwards;
+    }
+}
+
+.text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #5B6971;
+}
+
+$side-animation: 3px;
+$side-rotate: 2deg;
+
+@keyframes nonono {
+
+    0%,
+    50%,
+    100% {
+        transform: translateX(0px) rotate(0deg);
+    }
+
+    10%,
+    70% {
+        transform: translateX($side-animation) rotate($side-rotate);
+    }
+
+    20%,
+    60% {
+        transform: translateX(-$side-animation) rotate(-$side-rotate);
+    }
+}
+
+@keyframes circle-move {
+
+    0%,
+    50%,
+    100% {
+        transform: translateX(0px);
+    }
+
+    10%,
+    70% {
+        transform: translateX($side-animation);
+    }
+
+    20%,
+    60% {
+        transform: translateX(-$side-animation);
+    }
+}
+
+.replay {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 16px;
+    color: #FFF;
+    background-color: #5B6971;
+    border: 1px solid #5B6971;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

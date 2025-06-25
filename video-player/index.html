@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <video controls ontimeupdate="onTimeUpdate(event)">
+      <source src="./ALPHA.mp4" type="video/mp4" />
+    </video>
+    <div class="time">0</div>
+    <span class="percentage">0</span>
+    <span>%</span>
+  </body>
+  <script>
+    const timeElem = document.querySelector(".time");
+    const percentageElem = document.querySelector(".percentage");
+    window.onTimeUpdate = (e) => {
+      const time = Math.round(e.target.currentTime * 1000);
+      timeElem.innerHTML = time;
+      percentageElem.innerHTML = Math.round((time / 2500) * 100);
+    };
+  </script>
+</html>

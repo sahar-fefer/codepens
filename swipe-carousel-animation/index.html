@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swipe Carousel Animation</title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="./style.css" />
+    <div class="phone">
+      <img
+        src="https://optimaxweb.glassesusa.com/image/upload/v1720603129/media/wysiwyg/codepen-media/swipe-peek-animation/filter.png"
+        alt=""
+        class="filter-nav"
+      />
+      <div class="frames-grid">
+        <div class="card">
+          <div animate class="frames-wrapper">
+            <img
+              src="https://optimaxweb.glassesusa.com/image/upload/v1720602521/media/wysiwyg/codepen-media/swipe-peek-animation/front.png"
+              class="frame"
+            />
+            <img
+              src="https://optimaxweb.glassesusa.com/image/upload/v1720602521/media/wysiwyg/codepen-media/swipe-peek-animation/side.png"
+              class="frame"
+            />
+          </div>
+          <img src="https://optimaxweb.glassesusa.com/image/upload/v1720603129/media/wysiwyg/codepen-media/swipe-peek-animation/card.png" alt="">
+        </div>
+        <div class="card">
+          <div class="frames-wrapper">
+            <img
+              src="https://optimaxweb.glassesusa.com/image/upload/v1720602521/media/wysiwyg/codepen-media/swipe-peek-animation/front.png"
+              class="frame"
+            />
+          </div>
+          <img src="https://optimaxweb.glassesusa.com/image/upload/v1720603129/media/wysiwyg/codepen-media/swipe-peek-animation/card.png" alt="">
+        </div>
+        </div>
+      </div>
+    </div>
+    <button class="animate-button">Animate</button>
+  </body>
+
+  <script>
+    const animateButton = document.querySelector(".animate-button");
+    const framesWrapper = document.querySelectorAll(".frames-wrapper")[0];
+
+    animateButton.addEventListener("click", () => {
+      framesWrapper.removeAttribute("animate");
+      setTimeout(() => {
+        framesWrapper.setAttribute("animate", "");
+      }, 5);
+    });
+  </script>
+</html>

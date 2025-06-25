@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Text reveal by scroll</title>
+</head>
+
+<body>
+    <div className='header'>
+        100% authentic,
+        <br />
+        100% on trend
+    </div>
+
+    <script>
+        function revealSpans() {
+            for (let i = 0; i < spans.length; i++) {
+                if (pans[i].parentElement.getBoundingClientRect().top < window.innerHeight / 2) {
+                    const {
+                        left,
+                        top
+                    } = spans[i].getBoundingClientRect();
+                    let opacityValue = 1 - ((top * .01) + (left * 0.001)) < 0.1 ? 0.1 : 1 - ((top * .01) + (left *
+                        0.001)).toFixed(3);
+                    top = top(window.innerHeight * .2);
+                    opacityValue = opacityValue > 1 ? 1 : opacityValue.toFixed(3);
+                    spans[i].style.opacity = opacityValue;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

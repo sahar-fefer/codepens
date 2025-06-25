@@ -1,0 +1,76 @@
+body {
+  margin: 20vh auto 0;
+  font-family: "Roboto";
+}
+
+.loaders-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 45px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #5B6971;
+  margin-bottom: 8px;
+}
+
+.button {
+  background: #ff6c00;
+  border: 2px solid #ff6c00;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 176px;
+  height: 60px;
+  transition: all 0.15s;
+  font-family: Roboto;
+  cursor: pointer;
+  font-weight: 700;
+  color: #fff;
+  font-size: 18px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.loader {
+  z-index: 2;
+}
+
+.mobile::after {
+  content: "";
+  position: absolute;
+  background: rgba(227, 96, 0, 0.5);
+  border-radius: 50%;
+  opacity: 0;
+  width: 352px;
+  height: 352px;
+  transition: all 1.2s;
+}
+.mobile:active::after {
+  content: "";
+  opacity: 1;
+  width: 0;
+  height: 0;
+  transition: all 0s;
+  z-index: 0;
+}
+
+.ghost {
+  background-color: transparent;
+  color: #ff6c00;
+}
+.ghost::after {
+  content: "";
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.desktop:hover {
+  background-color: #e36000;
+  border: 1px solid #e36000;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Animation</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="screen" active>
+      <img
+        class="face"
+        src="https://optimaxweb.glassesusa.com/image/upload/v1716223155/media/wysiwyg/codepen-media/face.jpg"
+        alt=""
+      />
+      <div class="page1">
+        <div class="square">
+          <div class="straight-wrapper">
+            <div class="sprinkle a"></div>
+            <div class="sprinkle b"></div>
+            <div class="sprinkle c"></div>
+            <div class="sprinkle d"></div>
+            <div class="sprinkle e"></div>
+            <div class="sprinkle f"></div>
+            <div class="sprinkle g"></div>
+            <div class="sprinkle h"></div>
+            <div class="sprinkle i"></div>
+            <div class="sprinkle j"></div>
+            <div class="sprinkle k"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+        <div class="bottom-box">
+          <div class="percentage-strip">
+            <div class="percentage">
+              <span class="num"></span><span class="pres">%</span>
+            </div>
+            <div class="title">Analyzing facial features...&nbsp;</div>
+            <div class="fill-line"></div>
+          </div>
+          <div class="grid">
+            <div class="parameter-line a">
+              <svg fill="none" viewBox="0 0 16 16">
+                <path
+                  stroke="#fff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="m10.845 6.3-3.6 4.29L5.1 8.79M15 8A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                />
+              </svg>
+              <div class="parameter">Hairline</div>
+            </div>
+            <div class="parameter-line b">
+              <svg fill="none" viewBox="0 0 16 16">
+                <path
+                  stroke="#fff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="m10.845 6.3-3.6 4.29L5.1 8.79M15 8A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                />
+              </svg>
+              <div class="parameter">Nose Bridge</div>
+            </div>
+            <div class="parameter-line c">
+              <svg fill="none" viewBox="0 0 16 16">
+                <path
+                  stroke="#fff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="m10.845 6.3-3.6 4.29L5.1 8.79M15 8A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                />
+              </svg>
+              <div class="parameter">Jawline</div>
+            </div>
+            <div class="parameter-line d">
+              <svg fill="none" viewBox="0 0 16 16">
+                <path
+                  stroke="#fff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="m10.845 6.3-3.6 4.29L5.1 8.79M15 8A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                />
+              </svg>
+              <div class="parameter">Skin Tone</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page2">
+        <div class="box">
+          <div class="text">
+            Lookin' good! Your new glasses <br />are just a few clicks away!
+          </div>
+          <button onclick="reAnimate()">Continue</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const screen = document.querySelector(".screen");
+
+    function reAnimate() {
+      screen.removeAttribute("active");
+      setTimeout(() => {
+        screen.setAttribute("active", "");
+      }, 10);
+    }
+  </script>
+</html>

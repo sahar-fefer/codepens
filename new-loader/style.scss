@@ -1,0 +1,161 @@
+body {
+    margin: 20vh auto 0;
+    font-family: 'Roboto';
+}
+
+// xs:
+$loader-xs-size: 18px;
+$button-xs-width: 120px;
+$button-xs-height: 32px;
+// s:
+$loader-s-size: 22px;
+$button-s-width: 133px;
+$button-s-height: 40px;
+// m:
+$loader-m-size: 26px;
+$button-m-width: 141px;
+$button-m-height: 48px;
+// l:
+$loader-l-size: 32px;
+$button-l-width: 176px;
+$button-l-height: 60px;
+
+.loaders-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+}
+
+
+.xs {
+    width: $button-xs-width;
+    height: $button-xs-height;
+
+    .loader {
+        width: $loader-xs-size;
+    }
+
+    circle {
+        stroke-width: 2px;
+    }
+
+    .circular {
+        height: $loader-xs-size;
+        width: $loader-xs-size;
+    }
+}
+
+.s {
+    width: $button-s-width;
+    height: $button-s-height;
+
+    .loader {
+        width: $loader-s-size;
+    }
+
+    .circular {
+        height: $loader-s-size;
+        width: $loader-s-size;
+    }
+}
+
+.m {
+    width: $button-m-width;
+    height: $button-m-height;
+
+    .loader {
+        width: $loader-m-size;
+    }
+
+    .circular {
+        height: $loader-m-size;
+        width: $loader-m-size;
+    }
+}
+
+.l {
+    width: $button-l-width;
+    height: $button-l-height;
+
+    .loader {
+        width: $loader-l-size;
+    }
+
+    .circular {
+        height: $loader-l-size;
+        width: $loader-l-size;
+    }
+}
+
+.title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #5B6971;
+    margin-bottom: 8px;
+}
+
+.button {
+    background: #CC5600;
+    border: 2px solid #CC5600;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    position: relative;
+    margin: 0px auto;
+
+    &:before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+}
+
+.circular {
+    animation: rotate 2s linear infinite forwards;
+    transform-origin: center center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: visible;
+
+    circle {
+        stroke-width: 3px;
+        stroke: #FFFFFF;
+        fill: none;
+    }
+}
+
+
+.loader-circle {
+    stroke-dasharray: 184%, 400%;
+    stroke-dashoffset: -313%;
+    animation: dash 1.5s ease-in-out infinite forwards;
+    stroke-linecap: round;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 0%, 400%;
+        stroke-dashoffset: 0%;
+    }
+
+    50% {
+        stroke-dasharray: 184%, 400%;
+        stroke-dashoffset: -109%;
+    }
+}

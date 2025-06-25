@@ -1,0 +1,140 @@
+$slider-width: 650px;
+$slider-height: 46px;
+$background-color: #F8FAFF;
+$shadow-color: rgba(248, 250, 255, 0.75);
+$text-color: #0F0F0F;
+$light-text-color: #4D4D4D;
+
+body {
+    font-family: Roboto,
+        Arial,
+        sans-serif;
+    margin: 0;
+
+    * {
+        box-sizing: border-box;
+    }
+}
+
+.slider {
+    background: $background-color;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    height: $slider-height;
+    overflow: hidden;
+}
+
+.wrapper {
+    width: $slider-width;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+
+.slides {
+    display: flex;
+    position: relative;
+    top: 0;
+    left: -$slider-width;
+    width: 10000px;
+}
+
+.slides.shifting {
+    transition: left .2s ease-out;
+}
+
+.slide {
+    width: $slider-width;
+    height: $slider-height;
+    cursor: grab;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+    position: relative;
+
+    .title {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 18px;
+        color: $text-color;
+    }
+
+    .code-wrapper {
+        font-size: 16px;
+        line-height: 18px;
+        color: $text-color;
+        margin-left: 16px;
+        margin-right: 40px;
+
+        .code {
+            font-weight: 700;
+        }
+    }
+
+    .more {
+        font-size: 14px;
+        line-height: 17px;
+        color: $light-text-color;
+        text-decoration: underline;
+    }
+}
+
+.control {
+    position: absolute;
+    top: 0;
+    width: 24px;
+    height: $slider-height;
+    background: $background-color;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+        &::after {
+            background: rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    &::before {
+        content: '';
+        width: 50px;
+        height: $slider-height;
+        box-shadow: 35px 0px 20px 0px $shadow-color;
+        position: absolute;
+        top: 0;
+        z-index: 2;
+    }
+
+    &::after {
+        content: '';
+        width: 24px;
+        height: 38px;
+        background: rgba(0, 0, 0, 0);
+        border-radius: 4px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        transition: background .15s;
+    }
+}
+
+.prev {
+    left: 0;
+
+    &::before {
+        right: 0;
+        box-shadow: 35px 0px 20px 0px $shadow-color;
+    }
+}
+
+.next {
+    right: 0;
+
+    &::before {
+        left: 0;
+        box-shadow: -35px 0px 20px 0px $shadow-color;
+    }
+}

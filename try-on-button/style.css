@@ -1,0 +1,212 @@
+:root {
+  --try-on-width: 160px;
+  --try-on-height: 40px;
+  --button-radius: 24px;
+  --button-border-width: 3px;
+  --appear-duration: 0.2s;
+  --rotate-delay: -0.2s;
+  --rotate-disappear-duration: 0.2s;
+  --rotate-cubic: linear;
+  --general-cubic: cubic-bezier(0.2, 0.7, 0.8, 0.7);
+  --rotate-duration: 1.4s;
+  --rotate-repeat: 1.8;
+  --primary-color: #0f0f0f;
+  --background-color: #f7f8f9;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+}
+body * {
+  box-sizing: border-box;
+}
+
+.button {
+  cursor: pointer;
+}
+
+.button,
+.try-on {
+  max-height: var(--try-on-height);
+  padding: 14px 24px;
+  border-radius: var(--button-radius);
+  border: 2px solid var(--lighter-color);
+  background: var(--primary-color);
+  overflow: hidden;
+  color: var(--Greys-white, #fff);
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-wrapper {
+  position: relative;
+  width: 768px;
+  height: 382px;
+  display: flex;
+  justify-content: center;
+}
+.img-wrapper img {
+  position: absolute;
+  z-index: -2;
+}
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@property --x {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@keyframes x {
+  /* 30 + 130 = button width */
+  0% {
+    --x: 20px;
+  }
+  32.82275711% {
+    --x: 140px;
+  }
+  50% {
+    --x: 140px;
+  }
+  82.82275711% {
+    --x: 20px;
+  }
+  100% {
+    --x: 20px;
+  }
+}
+@keyframes rotating {
+  0% {
+    --rotate: 0deg;
+  }
+  32.82275711% {
+    --rotate: 0deg;
+  }
+  50% {
+    --rotate: 180deg;
+  }
+  82.82275711% {
+    --rotate: 180deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+.try-on {
+  position: relative;
+  height: var(--try-on-height);
+  width: var(--try-on-width);
+  border: 0;
+  margin: 302px;
+}
+.try-on::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: conic-gradient(from calc(var(--rotate) - 80deg) at var(--x) 20px, var(--primary-color) 0%, #fff 20%, var(--primary-color) 25%);
+  transition: opacity 0.2s ease-out;
+}
+.try-on .inner-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  background: var(--primary-color);
+  inset: var(--button-border-width);
+  border-radius: 45px;
+  z-index: 1;
+}
+.try-on[animation=appear-reset] {
+  scale: 0.8 0.95;
+  opacity: 0;
+}
+.try-on[animation=appear-reset] .icon,
+.try-on[animation=appear-reset] .text {
+  opacity: 0;
+}
+.try-on[animation=appear] {
+  scale: 1;
+  opacity: 1;
+  transition: var(--appear-duration) ease-out;
+  transition-property: opacity, scale;
+}
+.try-on[animation=appear] .icon,
+.try-on[animation=appear] .text {
+  transition: var(--appear-duration) ease-out;
+  transition-property: opacity, scale;
+  opacity: 1;
+}
+.try-on[animation=appear] .icon {
+  transition-delay: 0.2s;
+}
+.try-on[animation=appear] .text {
+  transition-delay: 0.25s;
+}
+.try-on[animation=glow] {
+  animation: glow 1.2s 2 var(--general-cubic);
+}
+.try-on[animation=rotate]::before {
+  content: "";
+  opacity: 1;
+  animation: rotating var(--rotate-duration) var(--rotate-cubic) var(--rotate-repeat), x var(--rotate-duration) var(--rotate-cubic) var(--rotate-repeat), disappear var(--rotate-disappear-duration) linear calc(var(--rotate-repeat) * var(--rotate-duration) - var(--rotate-disappear-duration));
+}
+
+@keyframes scale {
+  0% {
+    scale: 0.8;
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 0 0px rgba(32, 152, 243, 0.6);
+  }
+  80% {
+    box-shadow: 0 0 0 15px rgba(32, 152, 243, 0);
+  }
+}
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 0 0px rgba(15, 15, 15, 0.4);
+  }
+  80% {
+    box-shadow: 0 0 0 15px rgba(15, 15, 15, 0);
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.buttons-wrapper {
+  display: flex;
+  gap: 8px;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+}
+
+.page-wrapper {
+  height: 100vh;
+  font-family: 'Roboto';
+}
+
+.page-wrapper .page {
+  height: 100%;
+  width: 100%;
+  background-color: azure;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-wrapper .page .toggle {
+  padding: 12px 24px;
+  background-color: #2196F3;
+  color: #FFFFFF;
+  border: 1px solid #2196F3;
+  font-size: 20px;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.page-wrapper .reminder {
+  position: absolute;
+  left: 20px;
+  bottom: -50px;
+  width: 150px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 12px;
+  background: #2196F3;
+  -webkit-box-shadow: 0px 1px 3px rgba(58, 72, 80, 0.07), 0px 8px 14px rgba(176, 189, 197, 0.15), 0px 2px 8px rgba(176, 189, 197, 0.11);
+          box-shadow: 0px 1px 3px rgba(58, 72, 80, 0.07), 0px 8px 14px rgba(176, 189, 197, 0.15), 0px 2px 8px rgba(176, 189, 197, 0.11);
+  border-radius: 12px;
+  color: #FFFFFF;
+  padding: 16px 12px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  cursor: pointer;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.page-wrapper .reminder.open-reminder {
+  bottom: 20px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  -webkit-transition: all 0.4s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  transition: all 0.4s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.page-wrapper .reminder.open-reminder .exit {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  -webkit-transition-delay: .6s;
+          transition-delay: .6s;
+}
+
+.page-wrapper .reminder:hover .exit {
+  border: 1px solid #F1F3F4;
+  -webkit-box-shadow: 0px 1px 3px rgba(58, 72, 80, 0.07), 0px 8px 14px rgba(176, 189, 197, 0.15), 0px 2px 8px rgba(176, 189, 197, 0.11);
+          box-shadow: 0px 1px 3px rgba(58, 72, 80, 0.07), 0px 8px 14px rgba(176, 189, 197, 0.15), 0px 2px 8px rgba(176, 189, 197, 0.11);
+}
+
+.page-wrapper .reminder:hover .get {
+  gap: 12px;
+}
+
+.page-wrapper .reminder .exit,
+.page-wrapper .reminder .get {
+  -webkit-transition: all 0.2s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  transition: all 0.2s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.page-wrapper .reminder .exit {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 24px;
+  height: 24px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #F7F8F9;
+  -webkit-box-shadow: 0px 1px 2px rgba(58, 72, 80, 0.07), 0px 6px 13px rgba(176, 189, 197, 0.14), 0px 1px 6px rgba(176, 189, 197, 0.09);
+          box-shadow: 0px 1px 2px rgba(58, 72, 80, 0.07), 0px 6px 13px rgba(176, 189, 197, 0.14), 0px 1px 6px rgba(176, 189, 197, 0.09);
+  will-change: box-shadow, border;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-transition: opacity 0.12s cubic-bezier(0.05, 0.61, 0.41, 0.95), visibility 0.12s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  transition: opacity 0.12s cubic-bezier(0.05, 0.61, 0.41, 0.95), visibility 0.12s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.page-wrapper .reminder .info {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.page-wrapper .reminder .get {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  will-change: gap;
+}

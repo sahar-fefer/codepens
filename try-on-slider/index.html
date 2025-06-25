@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Try On Slider</title>
+</head>
+
+<body>
+    <div class="nav-wrapper">
+        <div class="pill">pillll</div>
+        <nav>
+            <div class="circle-wrapper">
+                <div class="circle">1</div>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle">2</div>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle">3</div>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle">4</div>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle">5</div>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle">6</div>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle">7</div>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle">8</div>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle">9</div>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle">10</div>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle">11</div>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle">12</div>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle">13</div>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle">14</div>
+            </div>
+        </nav>
+    </div>
+    
+    <script>
+        const circles = document.querySelectorAll('.circle-wrapper');
+
+        const circleObserver = new IntersectionObserver(circles => {
+            circles.forEach(circle => {
+                circle.target.classList.toggle('show', circle.isIntersecting)
+            })
+        },
+            {
+                threshold: 1
+            })
+
+        circles.forEach(circle => {
+            circleObserver.observe(circle)
+        })
+
+    </script>
+</body>
+
+</html>

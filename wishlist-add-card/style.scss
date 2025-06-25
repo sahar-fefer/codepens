@@ -1,0 +1,125 @@
+body {
+    background: #e5e5e5;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1293px;
+    font-family: "Roboto";
+}
+
+.add-card {
+    margin-bottom: 20px;
+    font-family: Roboto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    border-radius: 24px;
+    cursor: pointer;
+    font-weight: 700;
+    color: #fff;
+    transition: 0.15s background-color;
+    box-sizing: border-box;
+    height: 40px;
+    padding: 6px 17px;
+    font-size: 16px;
+    border: 2px solid;
+    background-color: #2196f3;
+    border-color: #2196f3;
+
+    &:hover {
+        background-color: #1c86da;
+        border-color: #1c86da;
+    }
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 24px;
+    gap: 24px;
+    max-width: 1296px;
+    width: max-content;
+    transition: all 0.2s ease;
+}
+
+.card {
+    max-width: 416px;
+    width: 416px;
+    height: 387px;
+    background: #ffffff;
+    border: 1px solid #f7f8f9;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05),
+        0px 4px 12px -1px rgba(0, 0, 0, 0.05), 0px 1px 4px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+@keyframes moveLine {
+    60% {
+        width: 0;
+        padding: 0;
+        border: 0;
+        margin-left: -24px;
+        opacity: 0;
+    }
+
+    10%,
+    61% {
+        width: 416px;
+        padding: 12px;
+        border: 1px solid #f7f8f9;
+        margin-left: 0;
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    65% {
+        transform: translateX(8px);
+    }
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .text {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 24px;
+        color: #0f0f0f;
+        margin: 24px 0;
+    }
+}
+
+.product {
+    transition: all 0.3s ease;
+
+    img {
+        height: 100%;
+        margin: auto;
+        display: block;
+    }
+
+    &[open] {
+        opacity: 0;
+        width: 0;
+        padding: 0;
+        border: 1px solid #FFFFFF;
+        margin-left: -26px;
+    }
+}

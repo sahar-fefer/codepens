@@ -1,0 +1,31 @@
+body {
+  margin: 50px 0;
+  font-family: "Roboto";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-wrapper {
+  border: 1px solid black;
+  border-radius: 8px;
+  width: 375px;
+  height: 85vh;
+  padding: 16px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content;
+  gap: 16px 7px;
+  overflow: auto;
+}
+
+.card {
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.card.active {
+  transform: scale(0.95);
+}

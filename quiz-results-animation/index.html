@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="phone">
+        <video class="loader" autoplay="" muted="" playsinline="" loop="" title="loader">
+            <source src="./media/Gif.mp4" type="video/mp4">
+        </video>
+        <div class="end-page">
+            <img class="box" src="./media/1.png" alt="">
+            <img class="box" src="./media/2.png" alt="">
+            <img class="box" src="./media/3.png" alt="">
+            <img class="box" src="./media/4.png" alt="">
+            <img class="box cta" src="./media/CTA.png" alt="">
+        </div>
+    </div>
+
+    <div class="re-animation" onclick="runAnimation()">
+        <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M13.9864 5.92114C13.2933 3.37341 10.9636 1.5 8.19634 1.5C5.84052 1.5 3.80182 2.85771 2.82002 4.83333M2.2793 8.5C2.75537 11.3377 5.22334 13.5 8.19634 13.5C10.8088 13.5 13.0313 11.8304 13.8549 9.5"
+                stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path
+                d="M14.124 6.21673L12.299 5.3657C12.2909 5.36194 12.2914 5.35029 12.2998 5.34724L14.9759 4.37323C14.9843 4.37018 14.9921 4.37878 14.9884 4.38685L14.1373 6.2119C14.135 6.2169 14.129 6.21907 14.124 6.21673Z"
+                fill="black" stroke="black" stroke-linecap="round"></path>
+            <path
+                d="M1.87458 7.5866L3.69855 8.43713C3.70662 8.4409 3.70611 8.45255 3.69774 8.45559L1.02325 9.42903C1.01487 9.43208 1.007 9.42348 1.01076 9.41541L1.86129 7.59144C1.86363 7.58644 1.86958 7.58427 1.87458 7.5866Z"
+                fill="black" stroke="black" stroke-linecap="round"></path>
+        </svg>
+        Ran animation
+    </div>
+
+    <script>
+        const loader = document.getElementsByClassName('loader')[0]
+        const endPage = document.getElementsByClassName('end-page')[0]
+        setTimeout(() => {
+            loader.classList.add('dis-active')
+            endPage.classList.add('active')
+        }, 2500)
+
+        const runAnimation = () => {
+            loader.classList.remove('dis-active')
+            endPage.classList.remove('active')
+
+            setTimeout(() => {
+                loader.classList.add('dis-active')
+                endPage.classList.add('active')
+            }, 2500)
+        }
+    </script>
+</body>
+
+</html>
